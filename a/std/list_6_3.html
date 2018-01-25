@@ -1,0 +1,223 @@
+<!--头部...-->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      
+      <li><a href="/dededln/a/xwdt/">新闻动态</a></li>
+      
+      <li><a href="/dededln/a/cpxl/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装系列</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      <li class='hover'><a href='/dededln/a/std/ '>实体店</a></li>
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+          <form method="get" class="form">
+            <input type="text" name="search" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+<script>
+		addEventListener('DOMContentLoaded',function(){
+			tab('option','sh_box');
+		},false);
+</script>
+	<!--大背景-->
+	<div class="bg_img" style="background-image:url(/dededln/uploads/170721/1-1FH11SSbb.png)"></div>
+	<!--主题-->
+	<div class="option" id="option">
+		
+		<a href="/dededln/a/std/zmd/"><span >专卖店</span></a>
+		
+		<a href="/dededln/a/std/yxzmd/"><span >优秀专卖店</span></a>
+		
+	</div>
+	<!--专卖店-->
+	<!-- <section id="sh_box" class="sh_box"> -->
+		<!--主区-->
+	<article id="artc">
+	    <section class="section" id="sect1">
+	    	<ul>
+
+			<div>
+<li class="list">
+	    			<div>
+	    				<h3>德洛尼橱柜陕西咸阳专卖店</h3>
+	    				<p>
+	咸阳市秦都区人民西路46号太沣建材市场东排1号楼1-2号</p>
+<span>400-733-0006/010-00000000</span>
+	    			</div>
+	    		</li>    </div>
+
+	    	</ul>
+	    </section>
+   </article>
+		<!-- <div class="sh_state" id="state">
+			<div class="sh_tab">
+					<div class="sh_tabs_det">
+						<h3>德洛尼橱柜新疆博乐专卖店</h3>
+						<p>
+	齐齐哈尔市讷河市兴业路306号</p>
+<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜山西太原专卖店</h3>
+						<p>
+	北京市通州区宋庄镇双埠头工业园对面德洛尼大厦一层</p>
+<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜陕西咸阳专卖店</h3>
+						<p>
+	咸阳市秦都区人民西路46号太沣建材市场东排1号楼1-2号</p>
+<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜陕西西安大明宫建材城专卖店</h3>
+						<p>
+	西安市未央区北三环大明宫建材家居批发市场陶瓷现货交易区a区</p>
+<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜河北乐亭专卖店</h3>
+						<p>北京市通州区宋庄镇双埠头工业园对面德洛尼大厦一层</p>
+					<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜湖北襄阳专卖店</h3>
+						<p>
+	襄阳-襄城 领秀中原装饰建材城三楼</p>
+<span>3751008</span>
+					</div>
+
+			</div>
+		</div> -->
+		<!--专卖店...-->
+		<!--优秀专卖店-->
+		<!-- <div class="sh_sales" id="sales">
+			<div class="sh_tabs">
+				<div class="sh_tabs_det">
+						<h3>德洛尼橱柜德兴店</h3>
+						<p>上饶市德兴市银城镇铜都南大道33号香槟小镇</p>
+					<span>15180367662</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜甘肃天水专卖店</h3>
+						<p>北京市通州区宋庄镇双埠头工业园对面德洛尼大厦一层</p>
+					<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜甘肃庆阳专卖店</h3>
+						<p>北京市通州区宋庄镇双埠头工业园对面德洛尼大厦一层</p>
+					<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜甘肃兰州专卖店</h3>
+						<p>北京市通州区宋庄镇双埠头工业园对面德洛尼大厦一层</p>
+					<span>400-733-0006/010-00000000</span>
+					</div>
+<div class="sh_tabs_det">
+						<h3>德洛尼橱柜吉林镇赉专卖店</h3>
+						<p>白城市镇赉县凌云东路</p>
+					<span>400-733-0006/010-00000000</span>
+					</div>
+
+			</div>
+		</div> -->
+		<!--优秀专卖店...-->
+	<!-- </section> -->
+
+   <!-- 侧边栏 -->
+		<div class="sidebar">
+			<a href="javascript:;" class="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+			<a href="javascript:;" class="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+		</div>
+<!-- //侧边栏 -->
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+				<li><a href="link.htm">关于我们</a></li>
+				<li><a href="news.htm">新闻动态</a></li>
+				<li><a href="product.htm">产品系列</a></li>
+				<li><a href="case.htm">家装案例</a></li>
+				<li><a href="join.htm">招商加盟</a></li>
+				<li><a href="shop.htm">实体店</a></li>
+				<li><a href="call.htm">联系我们</a></li>
+			</ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 4006-0303-99</h2>
+				<p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+</body>
+</html>

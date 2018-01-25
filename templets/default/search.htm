@@ -1,0 +1,52 @@
+<!-- 搜索页 -->
+{dede:include filename='head.htm'/}
+<!-- //top -->
+<!-- /header -->
+<div class="resultbar" style='text-align:center'>搜索 <strong class="fc_03c">{dede:global name='keyword' function='RemoveXSS(@me)'/}</strong> 的结果 </div>
+<div class="result_content">	
+	<!-- <div class="sidebar">
+        <h2>相关搜索</h2>
+        <ul>
+            <li>{dede:likewords num='8'/}</li>
+	    </ul>
+		<div class="sidebar_banner"><script src='{dede:global.cfg_cmsurl/}/plus/ad_js.php?aid=16' language='javascript'></script></div>
+    </div> -->
+		<div class="resultlist">
+			
+	<article id="artc">
+	    <section class="section" id="sect1">
+	    	<ul >
+             {dede:list perpage='20'}
+				<li style="height: 2.5rem;">      				
+					
+					<div style="margin-right:25px">
+						<img src="[field:litpic/]" alt="" style="height: 2.5rem;width:100%"></div>
+					<h3><a href="[field:arcurl/]" target="_blank">[field:title/]</a></h3>
+					<span>
+						<small>分类：</small><a href="[field:typeurl/]" target="_blank">[field:typename/]</a><br>
+					</span>
+                    <p>[field:description/]...</p>
+					<span>
+						 <a href="[field:arcurl/]">[field:global.cfg_basehost/][field:arcurl/]</a><br>
+					   
+						<small>日期：</small>[field:stime/]
+					</span>
+				</li>
+			{/dede:list}
+			</ul>
+	    </section>
+   </article>
+				<!--翻页-->
+				<aside class="page" id="productPage">
+				  <ul>
+				    {dede:pagelist listsize='4' listitem='indexpre pageno next end'/}
+				  </ul>
+				</aside>
+				<!--翻页...-->
+		</div><!-- /listbox -->
+</div>
+<div style="margin-top:150px">
+	
+</div>
+<!-- footer -->
+{dede:include filename='footer.htm'/}

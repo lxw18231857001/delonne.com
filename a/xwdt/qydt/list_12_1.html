@@ -1,0 +1,396 @@
+<!-- 新闻列表 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="德洛尼官网德洛尼官网德洛尼官网" />
+  <meta name="keywords" content="德洛尼家居  德洛尼" />
+
+  <link rel="icon" href="/dededln/templets/default/images/32X32.ico"/>   
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+  <script src="/dededln/templets/default/js/area.js"></script>  
+
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      
+      <li><a href="/dededln/a/std/">实体店</a></li>
+      
+      <li><a href="/dededln/member/index.php">会员中心</a></li>
+      
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+        <form action="/dededln/plus/search.php" method="post" class="search-form">
+          <input type="text" name="keyword" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+        </form>
+
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+  <!-- 右侧边栏 -->
+
+<div class="sidebar">
+    <a href="javascript:;" class="sidebar_one" id="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+    <a href="javascript:;" class="sidebar_two" id="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+    <a href="javascript:;" class="sidebar_thr" id="sidebar_thr"><img src="/dededln/templets/default/images/talk.png"/></a>
+</div>
+<div id="orderPulishBox">
+    <form action="/dededln/plus/diy.php" enctype="multipart/form-data" method="post">
+     
+      <input type="hidden" name="action" value="post" />
+      <input type="hidden" name="diyid" value="1" />
+      <input type="hidden" name="do" value="2" />
+       <input type="hidden" name="time" value="" />
+
+        <div class="orderFurn" id="orderFurn">
+            <header class="orderFurnHead">
+                <h1>预约量尺</h1>
+                <b id="orderClose">X</b>
+            </header>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="姓名" name="username" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">中文2-10字</p>
+            </div>
+            <div class="orderBox" id="orderNameBox">
+                <input type="text" placeholder="联系方式" name="tel" class="order" id="orderName"/>
+
+                <p id="orderNameAlt">数字11位</p>
+            </div>
+            <div class="orderAddress">
+                <select id="province" name="province"></select>  
+                <select id="city" name="city"></select>  
+            <script>init_area();</script>
+            </div>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="详细联系地址" name="address" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">详细联系地址</p>
+            </div>
+            <div class="orderChecks">
+                <div><input name="style[]" type="checkbox" value="橱柜"/><h4>橱柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="衣柜"/><h4>衣柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="木门"/><h4>木门</h4></div>
+                <div><input name="style[]" type="checkbox" value="卫浴"/><h4>卫浴</h4></div>
+                <div><input name="style[]" type="checkbox" value="壁纸"/><h4>壁纸</h4></div>
+                <div><input type="text" placeholder="其他需求"  name="otherneeds" class="otherFit"/></div>
+            </div>
+            <input type="submit" name="orderIn" value="提交"   class="orderLogin">
+        </div>
+    </form>
+
+<!--  在线留言-->
+    <form method="post" action="/dededln/plus/guestbook.php" name="form1">
+         <input type='hidden' name='action' value='save' />
+        <div class="linePulish" id="linePulish">
+            <header class="linePulishHead">
+                <h1>在线留言</h1>
+                <b id="pulishClose">X</b>
+            </header>
+            <div class="pulishBox" id="pulishComNameBox">
+                <input type="text" placeholder="姓名" name="uname" class="pulish" id="pulishComName"/>
+
+                <p id="pulishComNameAlt">中文2-10字</p>
+            </div>
+            <div class="pulishBox" id="pulishNameBox">
+                <input type="text" placeholder="联系方式" name="qq" class="pulish" id="pulishName"/>
+                <p id="pulishNameAlt">数字11位</p>
+            </div>
+             <div class="pulishBox" id="pulishEmailBox">
+                <input type="text" placeholder="邮箱" name="email" class="pulish" id="pulishEmail"/>
+
+                <p id="pulishEmailAlt">数字/字母/-_.</p>
+            </div>
+            <div class="pulishAreaBox" id="pulishAreaBox">
+                <textarea placeholder="请输入留言内容" name="msg" class="pulish" id="pulishArea"></textarea>
+            </div>
+            <input type="submit" name="linePulishLogin" value="提交" class="linePulishLogin">
+        </div>
+    </form>
+
+
+</div>
+
+<script>
+    var gId = function (id) {
+        return document.getElementById(id);
+    }
+    gId('sidebar_one').onclick = function () {
+        gId('orderFurn').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('orderClose').onclick = function () {
+        gId('orderFurn').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+    gId('sidebar_thr').onclick = function () {
+        gId('linePulish').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('pulishClose').onclick = function () {
+        gId('linePulish').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+ // 姓名
+
+    $('#orderComName').on('input propertychange', function () {
+        if (!(comName.test($('#orderComName').val()))) {
+            $('#orderComNameAlt').text('姓名错误');
+            $('#orderComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderComNameAlt').text('');
+            $('#orderComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //联系方式
+
+    $('#orderName').on('input propertychange', function () {
+        if (!(phone.test($('#orderName').val()))) {
+            $('#orderNameAlt').text('联系方式错误');
+            $('#orderNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderNameAlt').text('');
+            $('#orderNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //在线留言：  公司名称 -- 姓名
+
+    $('#pulishComName').on('input propertychange', function () {
+        if (!(comName.test($('#pulishComName').val()))) {
+            $('#pulishComNameAlt').text('姓名错误');
+            $('#pulishComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishComNameAlt').text('');
+            $('#pulishComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 用户名 -- 联系方式
+
+    $('#pulishName').on('input propertychange', function () {
+        if (!(phone.test($('#pulishName').val()))) {
+            $('#pulishNameAlt').text('联系方式错误');
+            $('#pulishNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishNameAlt').text('');
+            $('#pulishNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+
+    // 邮箱
+
+    $('#pulishEmail').on('input propertychange', function () {
+        if (!(email.test($('#pulishEmail').val()))) {
+            $('#pulishEmailAlt').text('邮箱格式错误');
+            $('#pulishEmailBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishEmailAlt').text('');
+            $('#pulishEmailBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+</script>
+<!-- //侧边栏 -->
+
+		<!--left-->
+		<!--banner-->
+	<div class="bg_img" style="background-image:url(/dededln/uploads/170724/1-1FH4161143915.png);">
+		<div class="n_left_new  list_new_font" id="">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>新闻动态</span>
+		</div>
+	</div>
+
+	<!--菜单-->
+	<div class="option" id="option">
+		
+		<a href="/dededln/a/xwdt/qydt/"><span>企业动态</span></a>
+		
+		<a href="/dededln/a/xwdt/cxxx/"><span>促销信息</span></a>
+		
+	</div>
+	<!--动态-->
+	<section id="box" class="box">
+		<!--企业动态-->
+		<div class="n_state" id="state">
+			<div class="n_tab">
+			<a href="/dededln/a/xwdt/qydt/48.html" class="link">
+				<div class="n_tab_img" style="background-image:url(/dededln/uploads/170731/170731/1-1FI11A310458.jpg)"></div>
+				<div class="n_tab_det">
+					<date>
+						2017/08/01</date>
+					<span>企业动态</span>
+					<h3>德洛尼成立海外销售部，再创新高！...</h3>
+					<p> 德洛尼成立海外销售部，全面布局海外橱柜市场 近年来，我国橱柜市场需求量持续增长，几乎成为全球最具潜力的橱柜产品消费市场。并且，受高速发展的房地产市场影响，整体橱柜市场容量不断扩大，2011年橱柜市场容量达到了411亿元，预计2017年整体橱柜行业市场容量将达到1108亿元。德洛尼作为高端橱柜领导品牌，始终秉持着做人、服务、品质的宗旨，坚定品牌创新精神，保持健康稳定、快速发展步伐，驰骋橱柜市场。近日，德洛尼成立海外销售部，全面布局海外橱柜市场。 据了解，此次德洛尼成立海外销售部，首批人员已经派驻南非。 8 月份，更是在首都比勒陀尼亚签约工程订单 4000 套。德洛尼海外销售战团下一个战场是西班牙，西班牙团队将在 9 月份出发。近年来，国内橱柜市场发展一直保持良好势态。虽然受互联网大浪的冲击不小，但是一直坚持创新为动力的德洛尼却迎来新的发展机遇。如将传统产品改为整体橱柜，将产品更新换代，从单一的橱柜更新成全屋定制家具，让德洛尼先一步抢占市场商机。 此外，为迎合时代发展趋势，根据民众互联网消费习惯，德洛尼与各大网络平台取得合作，为其定制加工网上特销产品。并与线下各大经销商互动体验销售，推出短短 2 个月时间，市场出现井喷式增长，估计今年总体销售量约要增长 300% 。无论是什么行业，对一个品牌来说，这样的增长势头可以说是猛得相当惊人。让人毫不怀疑，一个发展势头如此强劲的品牌，将会创造新记录。因为随着时代发展， 80 、 90 后逐渐成为橱柜等家居市场的消费主力军。从目前这一消费人群的消费观念来看，可以发现，类似整体橱柜的年轻化产品更受青睐。而网购渠道的异军突起，已经成为时下最为流行的消费方式。 梁小姐就是德洛尼橱柜的忠实粉丝，梁小姐表示，自己新家装修家居定制就是来自德洛尼，还推荐了亲友也选择德洛尼。梁小姐表示，之所以多数人选择网购橱柜，是因为价格更为实惠。同时，橱柜产品更为丰富，可供选择空间大，可以最大程度上满足消费者的个性需求。另一大因素，则是德洛尼产品质量有保证，产品通过 ISO9002 国际质量体系认证。此外，我们还了解到德洛尼与世界绿色家居环保获得者泊诺思战略性合作，公司 80% 的原材料采用泊诺思绿色环保板材，做绿色环保家居的领先者。 无论是从布局海外市场，还是抢滩互联网橱柜市场，从德洛尼所取得的成绩来看，德洛尼的战略是成功的。同时，也见证了德洛尼书写的橱柜品牌传奇。我们相信，以德洛尼卓越的质量与良好口碑，在海外市场同样能够取得好成绩。 德洛尼全屋定制家居品牌 网址：www.ykxdln.com 动动你的手指，看完记得分享哦！ </p>
+				</div>
+			</a><a href="/dededln/a/xwdt/qydt/52.html" class="link">
+				<div class="n_tab_img" style="background-image:url(/dededln/uploads/allimg/170724/1-1FH41G5070-L.png)"></div>
+				<div class="n_tab_det">
+					<date>
+						2017/07/31</date>
+					<span>企业动态</span>
+					<h3>德洛尼与世界绿色环保板材获得者“泊诺斯”达...</h3>
+					<p> 绿色橱柜 德洛尼，为橱柜行业点亮一盏引路灯 21世纪，随着社会的稳定发展。百姓安居乐业，生活水平日渐小康，大大提升了生活质量。人们开始住上新房，用心地打造出一个个属于自己温馨的避风港。而家，最不可缺少的就是厨房。如何打造一个安全、实用且绿色环保的的厨房，橱柜选择很重要。 广大投资者的目光 转向 了消费者这一需求，成就了近些年高端橱柜的迅速发展。然而一个行业发展过于迅速，也就意味着很快将会遇见瓶颈。当然，这其中也包括一些鱼龙混淆的品牌，但在这个 优胜略汰 ，商场如战场的时代巅峰。在精明的消费者面前，只有产品新颖，大品牌的产品才能吸引群众的目光。作为国内排名前十 的橱柜品牌，德洛尼 致力于 创新，坚持为橱柜行业点亮一盏引路灯。 大品牌 真绿色 如今，居家人人讲究 绿色 环。 然而， 在橱柜的行业，打着环保的旗帜的商家不少，但真正能够做到绿色环保的，德洛尼可以说是当之无愧。为了帮助消费者打造出一个绿色环保、健康的居室厨房。能让人人享受健康、安心的厨房，德洛尼与世界绿色家居环保获得者泊诺思达成战略性合作伙伴，携手打造绿色厨房新标准。如今，德洛尼橱柜所用原材料 80% 都是采用泊诺思所属绿色环保板材。为健康居家做贡献，做环保家居的领导者，大品牌，绿色最实在。 以实用为标准 德洛尼一直坚守以好厨房的标准的设计理念，不断的自我突破，成功地为许许多多顾客打造温馨的家。为了改变市面上多数品牌橱柜不合理的设计， 只为展厅形式存的产品， 导致厨房空间局促的现象。 让居室厨房模块和橱柜模块结构能够完美对接，让互动智能化达到最佳效果。 德洛尼坚持以 用有限的使用面积创造最大的效益空间为一贯的原则，对国家居住标准厨房户型进行研究。根据厨房现状进行标准配备，使其更加模块化，分布更加合理实用，最大限度的执行标准柜的组合。合理的布局让厨房整体更加宽敞，让使用者更加舒心，更能全身心享受厨房的乐趣。 此合作方案推出短短两个多月的时间，市场上销售量就出现井喷式增长。据相关人员表示，以目前的形式来看，预计今年总体销售量有望增长至300 % 。品牌口碑的力量， 德洛尼定制家居产品无可阻挡。 德洛尼为让消费者获得最具性价比橱柜，直接让终端和消费市场产生关联。执行企业的原创性和标准化的复制，通过细致的管理，让产品经营、服务经营、渠道经营和推广经营等变得自如。相信有着德洛尼这种绿色环保橱柜品牌，加上不断创新的发展趋势，将带领橱柜行业走向一个新的高峰。 德洛尼橱柜衣柜全屋定制家居品牌 网址：www.ykxdln.com </p>
+				</div>
+			</a><a href="/dededln/a/xwdt/qydt/50.html" class="link">
+				<div class="n_tab_img" style="background-image:url(/dededln/uploads/170731/1-1FI11GH91M.jpg)"></div>
+				<div class="n_tab_det">
+					<date>
+						2017/07/31</date>
+					<span>企业动态</span>
+					<h3>【德洛尼橱柜】分享，没有买卖就没有伪劣橱柜...</h3>
+					<p> 买橱柜就像买金子 一定要买符合行情的价格 市场价多少就按市价买 如果贪图廉价可能会买到一个假冒 买橱柜又像看医生 一定要到正规医院找专业医师 虽然花费大价格高 但对生命健康却能得到保障 买橱柜更要到正规门店 买正品给生活带来方便 买不好有双重生命隐患 非专业安装可能台面开裂 劣质板材可能甲醛中毒 非专业安装可能触电 劣质厨电产品可能爆炸 因此对于懂行的专业人士而言 买橱柜厨电是家里最重要的事情之一 比买电脑、买电视、买空调都重要 因为它涉及生命安全 三百块一台热水器 买之前高兴淘到了便宜货 省了不少钱 用上了一氧化碳中毒引发悲剧 浪费了时间失去了生命 最后发现是台禁产禁销非法产品 一两百块名牌燃气灶具 买之前暗喜捡到了大便宜 省钱省力用上了名牌 用上几天甚至一次就炸了 浪费了时间维权都无门 最后发现是台假名牌 购买橱柜 低价不代表廉价 低价是等同市场平均水平的价格 与产品配置造价想匹配的价格 合格合法有安全资质的价格 保障保证能保护用户的价格 是加上售后服务的价格 是加上产品价值性价比的价格 是每一颗螺钉 是每一块板材 是每一个铰链 是每一个滑轨 都精工细作的价格 而不是为了低价诱惑消费 而未达到合格标准 让消费事故频发的价格 一个品牌 一个门店 每一款产品 每一个配件 都在销售良心 都在销售口碑 卖出去的橱柜泼出去的水 敢用诚信保证 我们是绝对的正品优质 橱柜厨电 无数的报价无数的产品 网购便宜批发便宜 直销便宜到处都打折促销 但消费者一定要知道 能给你便宜的渠道 不一定给你服务保障 能给你廉价的地方 不一定给你安全保障 能给你馅饼的地方 多半都是个陷阱 唯有选择正品标配 唯有选择实体品牌专卖店 才是 消费者 最佳的选择 有价值的产品 那才叫不贵 没有买卖就没有伪劣橱柜 从我做起 从你做起 支持正品 拒绝伪劣 给消费保障 给用户安全 找橱柜品牌，看德洛尼产品 德洛尼全屋定制家居 您看此文用 分 秒，转发只需1秒呦~ 传播正能量，拒绝冷漠！ 德洛尼橱衣柜全屋定制家居品牌 </p>
+				</div>
+			</a><a href="/dededln/a/xwdt/qydt/59.html" class="link">
+				<div class="n_tab_img" style="background-image:url(/dededln/uploads/allimg/170731/1-1FI11G2140-L.jpg)"></div>
+				<div class="n_tab_det">
+					<date>
+						2017/07/31</date>
+					<span>企业动态</span>
+					<h3>【德洛尼分享】如何才能把销售单值做大，一个...</h3>
+					<p> 在营销界有这样一个经典案例： 一老太太去买菜，路过四个水果摊。四家卖的苹果相近，但老太太并没有在最先路过的第一家和第二家买苹果，而是在第三家买了一斤， 更奇怪的是在第四家又买了两斤。 1 摊主一 老太太去买菜，路过水果摊，看到卖苹果的摊主，就问道：苹果怎么样啊? 摊主回答：我的苹果特别好吃，又大又甜!。 老太太摇摇头走开了 （只讲产品卖点，不探求需求、都是无效介绍，做不了单） 2 摊主二 老太太又到一个摊子，问:你的苹果什么口味的？ 摊主措手不及：早上刚到的货，没来得及尝尝，看这红润的表皮应该很甜。 老太太二话没说扭头就走了。 （对产品了解一定是亲自体验出的，亲自体验感受出的才是卖点。只限于培训听到的知识，应对不了客户） 3 摊主三 旁边的摊主见状问道：老太太，您要什么苹果，我这里种类很全! 老太太：我想买酸点的苹果。 摊主：我这种苹果口感比较酸，请问您要多少斤? 老太太：那就来一斤吧。 (客户需求把握了，但需求背后的动机是什么？丧失进一步挖掘的机会，属于客户自主购买，自然销售不能将单值放大） 4 摊主四 这时她又看到一个摊主的苹果便去询问：你的苹果怎么样啊? 摊主：我的苹果很不错的，请问您想要什么样的苹果呢? （探求需求） 老太太：我想要酸一些的 摊主:一般人买苹果都是要大的甜的，您为什么要酸苹果呢? （挖掘更深的需求） 老太太：儿媳妇儿怀孕了，想吃点酸的苹果 摊主：老太太您对儿媳妇儿真是体贴啊，将来您媳妇儿一定能给您生一个大胖孙子。 （适度恭维，拉近距离） 几个月以前，附近也有两家要生孩子的，她们就来我这里买苹果， （讲案例，第三方佐证） 您猜怎么着?这两家都生了个儿子， (构建情景，引发憧憬） 你想要多少? （ 封闭提问，默认成交，适时逼单 ，该出手时就出手） 老太太：我再来两斤吧。 老太太被摊主说得高兴了 (客户的感觉有了，一切都有了） 。摊主又对老太太介绍其他水果。 摊主：橘子也适合孕妇吃，酸甜还有多种维生素，特别有营养 (连单，最大化购买，不给对手机会） ，您要是给媳妇儿来点橘子，她肯定开心! （愿景引发） 老太太：是嘛!好那就来三斤橘子吧。 摊主：您人可真好，媳妇儿要是摊上了您这样的婆婆，实在太有福气了! (适度准确拍马屁，不要拍到马蹄子上） 摊主称赞着老太太，又说他的水果每天都是几点进货，天天卖光，保证新鲜 (将单砸实，让客户踏实） ，要是吃好了，让老太太再过来 (建立客户黏性）。 老太太被摊主夸得开心，说要是吃的好，让朋友也来买提着水果，满意的回家了。 那么，销售卖什么？ 生客卖的是礼貌 熟客卖的是热情 急客卖的是效率 慢客卖的是耐心 有钱卖的是尊贵 没钱卖的是实惠 豪客卖的是仗义 时髦卖的是时尚 小气卖的是利益 享受型卖的是服务 挑剔型卖的是细节 犹豫型卖的是保障 随和型卖的是认同感 德洛尼橱柜、衣柜、酒柜、榻榻米、书柜、电视柜、护墙板、浴室柜、等等系列产品，为您打造私人家居产品。 装房子买家具，当然选德洛尼！ 德洛尼定制家居，您值得拥有！ </p>
+				</div>
+			</a><a href="/dededln/a/xwdt/qydt/54.html" class="link">
+				<div class="n_tab_img" style="background-image:url(/dededln/uploads/170731/1-1FI1102940c0.jpg)"></div>
+				<div class="n_tab_det">
+					<date>
+						2017/07/31</date>
+					<span>企业动态</span>
+					<h3>【德洛尼橱柜】全屋定制：乐亭旗舰店盛大开幕...</h3>
+					<p> 乐亭县（lotng）是中国河北省唐山市所辖的一个县，也是中国共产党的主要创始人之一李大钊的故乡更是是曲艺乐亭大鼓的发源地。乐亭县虽系海隅小县，但历史悠久。从历史记载与出土文物考查，在数千年前，已有人类居住，滋养生息，创造社会文明，历代兴替，沿革频繁。乐亭盛产土特产主要有对虾、对虾罐头、缸炉烧饼等食品，有久保鲜桃，巨峰葡萄等美味的水果，被称为水果之乡。 今天是个喜庆而又热闹的日子，德洛尼橱柜全屋定制家居在乐亭县尘埃落定，拥有300多平米的定制家居旗舰店终于装修完毕，并定于9月28日隆重举行盛大开业典礼，场面非常的气派壮观，并由公司董事长陈贵福先生亲自莅临本店指导，并在现场给予产品最大的优惠，让客户买到既喜庆又优质的产品和服务，现场优惠不断，豪礼不断！让我们一同带着喜悦的心情祝福吧！祝福乐亭德洛尼旗舰店的薛总：生意兴隆！开业大吉！日进斗金！财源滚滚！ 下面让我们一睹店面精彩场面，携手共同见证精彩时分！ 客户形象接待区 橱柜区 榻榻米 衣柜区 酒柜区 客户休息洽谈区 德洛尼橱柜乐亭旗舰店精彩图片展示与您分享！ 德洛尼乐亭店订购热线：15613563058 </p>
+				</div>
+			</a><a href="/dededln/a/xwdt/qydt/51.html" class="link">
+				<div class="n_tab_img" style="background-image:url(/dededln/uploads/allimg/170724/1-1FH41G4230-L.png)"></div>
+				<div class="n_tab_det">
+					<date>
+						2016/08/06</date>
+					<span>企业动态</span>
+					<h3>2014德洛尼橱柜招商火热开启...</h3>
+					<p> 德洛尼橱柜2014千店计划全面启动，火爆招商中，为了更多的加盟商能够找到真正适合自己的品牌， 德洛尼从品牌定位开始，打造高端品牌中端价格，能让大众消费得起的品牌，而且还大力拓展产品线， 以全屋定制产品为导向，让消费者订购产品时更轻松，更省心，更省钱，得到的是一站式服务。 为了更多的人能轻松的就买到德洛尼的产品，公司决定降低加盟门槛， 提供最好最优惠最大的支持给予加盟商，能让更多想创业的人加盟到德洛尼这个大家庭里，共同携手创造共赢！ </p>
+				</div>
+			</a>
+		</div>
+		<!--企业动态...-->
+	</section>
+
+	<!-- fenye  -->
+		<aside class="page" id="casePage">
+   		<ul>
+				<li>首页</li>
+<li class="thisclass">1</li>
+<li><a href='list_12_2.html'>2</a></li>
+<li><a href='list_12_2.html'>下一页</a></li>
+<li><a href='list_12_2.html'>末页</a></li>
+
+   		</ul>
+   		</aside>
+
+	<script>
+		addEventListener('DOMContentLoaded',function(){
+//			tab('option','box');
+		},false);
+	</script>
+
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+		      
+		      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+		      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+		      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+		      
+		      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+		      
+		      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+		      
+		      <li><a href="/dededln/a/std/">实体店</a></li>
+		      
+		      <li><a href="/dededln/member/index.php">会员中心</a></li>
+		      
+		      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+		      
+		    </ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 022-60902987</h2>
+				<!-- <p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p> -->
+				<p>Copyright © 德洛尼家居, Delonne home AlRights Reserved.33</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- 百度商桥客服 -->
+ <script>
+// var _hmt = _hmt || [];
+// (function() {
+//   var hm = document.createElement("script");
+//   hm.src = "https://hm.baidu.com/hm.js?15f7f8d2c4dae9b984d744d4567fa6f8";
+//   var s = document.getElementsByTagName("script")[0]; 
+//   s.parentNode.insertBefore(hm, s);
+// })();
+</script>
+
+</body>
+</html>

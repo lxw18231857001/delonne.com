@@ -1,0 +1,504 @@
+<!-- 新闻详情 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="德洛尼官网德洛尼官网德洛尼官网" />
+  <meta name="keywords" content="德洛尼家居  德洛尼" />
+
+  <link rel="icon" href="/dededln/templets/default/images/32X32.ico"/>   
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+  <script src="/dededln/templets/default/js/area.js"></script>  
+
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      
+      <li><a href="/dededln/a/std/">实体店</a></li>
+      
+      <li><a href="/dededln/member/index.php">会员中心</a></li>
+      
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+        <form action="/dededln/plus/search.php" method="post" class="search-form">
+          <input type="text" name="keyword" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+        </form>
+
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+  <!-- 右侧边栏 -->
+
+<div class="sidebar">
+    <a href="javascript:;" class="sidebar_one" id="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+    <a href="javascript:;" class="sidebar_two" id="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+    <a href="javascript:;" class="sidebar_thr" id="sidebar_thr"><img src="/dededln/templets/default/images/talk.png"/></a>
+</div>
+<div id="orderPulishBox">
+    <form action="/dededln/plus/diy.php" enctype="multipart/form-data" method="post">
+     
+      <input type="hidden" name="action" value="post" />
+      <input type="hidden" name="diyid" value="1" />
+      <input type="hidden" name="do" value="2" />
+       <input type="hidden" name="time" value="" />
+
+        <div class="orderFurn" id="orderFurn">
+            <header class="orderFurnHead">
+                <h1>预约量尺</h1>
+                <b id="orderClose">X</b>
+            </header>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="姓名" name="username" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">中文2-10字</p>
+            </div>
+            <div class="orderBox" id="orderNameBox">
+                <input type="text" placeholder="联系方式" name="tel" class="order" id="orderName"/>
+
+                <p id="orderNameAlt">数字11位</p>
+            </div>
+            <div class="orderAddress">
+                <select id="province" name="province"></select>  
+                <select id="city" name="city"></select>  
+            <script>init_area();</script>
+            </div>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="详细联系地址" name="address" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">详细联系地址</p>
+            </div>
+            <div class="orderChecks">
+                <div><input name="style[]" type="checkbox" value="橱柜"/><h4>橱柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="衣柜"/><h4>衣柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="木门"/><h4>木门</h4></div>
+                <div><input name="style[]" type="checkbox" value="卫浴"/><h4>卫浴</h4></div>
+                <div><input name="style[]" type="checkbox" value="壁纸"/><h4>壁纸</h4></div>
+                <div><input type="text" placeholder="其他需求"  name="otherneeds" class="otherFit"/></div>
+            </div>
+            <input type="submit" name="orderIn" value="提交"   class="orderLogin">
+        </div>
+    </form>
+
+<!--  在线留言-->
+    <form method="post" action="/dededln/plus/guestbook.php" name="form1">
+         <input type='hidden' name='action' value='save' />
+        <div class="linePulish" id="linePulish">
+            <header class="linePulishHead">
+                <h1>在线留言</h1>
+                <b id="pulishClose">X</b>
+            </header>
+            <div class="pulishBox" id="pulishComNameBox">
+                <input type="text" placeholder="姓名" name="uname" class="pulish" id="pulishComName"/>
+
+                <p id="pulishComNameAlt">中文2-10字</p>
+            </div>
+            <div class="pulishBox" id="pulishNameBox">
+                <input type="text" placeholder="联系方式" name="qq" class="pulish" id="pulishName"/>
+                <p id="pulishNameAlt">数字11位</p>
+            </div>
+             <div class="pulishBox" id="pulishEmailBox">
+                <input type="text" placeholder="邮箱" name="email" class="pulish" id="pulishEmail"/>
+
+                <p id="pulishEmailAlt">数字/字母/-_.</p>
+            </div>
+            <div class="pulishAreaBox" id="pulishAreaBox">
+                <textarea placeholder="请输入留言内容" name="msg" class="pulish" id="pulishArea"></textarea>
+            </div>
+            <input type="submit" name="linePulishLogin" value="提交" class="linePulishLogin">
+        </div>
+    </form>
+
+
+</div>
+
+<script>
+    var gId = function (id) {
+        return document.getElementById(id);
+    }
+    gId('sidebar_one').onclick = function () {
+        gId('orderFurn').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('orderClose').onclick = function () {
+        gId('orderFurn').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+    gId('sidebar_thr').onclick = function () {
+        gId('linePulish').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('pulishClose').onclick = function () {
+        gId('linePulish').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+ // 姓名
+
+    $('#orderComName').on('input propertychange', function () {
+        if (!(comName.test($('#orderComName').val()))) {
+            $('#orderComNameAlt').text('姓名错误');
+            $('#orderComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderComNameAlt').text('');
+            $('#orderComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //联系方式
+
+    $('#orderName').on('input propertychange', function () {
+        if (!(phone.test($('#orderName').val()))) {
+            $('#orderNameAlt').text('联系方式错误');
+            $('#orderNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderNameAlt').text('');
+            $('#orderNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //在线留言：  公司名称 -- 姓名
+
+    $('#pulishComName').on('input propertychange', function () {
+        if (!(comName.test($('#pulishComName').val()))) {
+            $('#pulishComNameAlt').text('姓名错误');
+            $('#pulishComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishComNameAlt').text('');
+            $('#pulishComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 用户名 -- 联系方式
+
+    $('#pulishName').on('input propertychange', function () {
+        if (!(phone.test($('#pulishName').val()))) {
+            $('#pulishNameAlt').text('联系方式错误');
+            $('#pulishNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishNameAlt').text('');
+            $('#pulishNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+
+    // 邮箱
+
+    $('#pulishEmail').on('input propertychange', function () {
+        if (!(email.test($('#pulishEmail').val()))) {
+            $('#pulishEmailAlt').text('邮箱格式错误');
+            $('#pulishEmailBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishEmailAlt').text('');
+            $('#pulishEmailBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+</script>
+<!-- //侧边栏 -->
+
+	<section class="n_main" id="main">
+		<!--left-->
+		<div class="n_left" id="n_left">
+			<div class="n_left_font">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>新闻动态</span>
+			</div>
+		</div>
+	</section>
+	<!--菜单-->
+	<div class="option" id="option">
+		
+		<a href="/dededln/a/xwdt/qydt/"><span>企业动态</span></a>
+		
+		<a href="/dededln/a/xwdt/cxxx/"><span>促销信息</span></a>
+		
+	</div>
+	<!--详情-->
+	<div id="atc_box">
+		<article class="atc">
+			<header>
+				<h1>【德洛尼分享】如何才能把销售单值做大，一个卖水果的都做到了，赶紧看看吧！</h1>
+				<span><time>2017.07.31 17:05</time>
+					  <name>By:&nbsp;&nbsp;&nbsp;admin</name></span>
+			</header>
+			
+				<br />
+<div class="rich_media_content " id="js_content" style="margin: 0px; padding: 0px; overflow: hidden; color: rgb(62, 62, 62); position: relative; min-height: 350px; font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; line-height: 20.48px; background-color: rgb(255, 255, 255);">
+		<img data-="" data-fail="0" data-ratio="0.25" data-s="300,640" data-type="png" data-w="" src="/dededln/uploads/170731/1-1FI11G253293.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important;" /></p>
+	<fieldset data-id="34405" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; min-width: 0px; color: rgb(62, 62, 62); white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 24px; border: 0px none; font-size: 14px; background-color: rgb(255, 255, 255);">
+		<fieldset style="margin: 0.8em 0px 0.3em; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; min-width: 0px; border: none;">
+			<section style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 1em; font-weight: bold; text-align: center; text-decoration: inherit; color: rgb(255, 255, 255); border-color: rgb(195, 39, 43);">
+				<section data-brushtype="text" style="margin: 0px; padding: 0.5em; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; line-height: 1.2em; font-size: 1em; background-color: rgb(195, 39, 43);">
+					在营销界有这样一个经典案例：</section>
+				<section data-width="0px" style="margin: 0px auto; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; width: 0px; border-top-width: 0.6em; border-top-style: solid; border-bottom-color: rgb(195, 39, 43); border-top-color: rgb(195, 39, 43); height: 10px; border-left-width: 1em !important; border-left-style: solid !important; border-left-color: transparent !important; border-right-width: 1em !important; border-right-style: solid !important; border-right-color: transparent !important;">
+					&nbsp;</section>
+			</section>
+		</fieldset>
+	</fieldset>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">一老太太去买菜，路过四个水果摊。四家卖的苹果相近，但老太太并没有在最先路过的第一家和第二家买苹果，而是在第三家买了一斤， 更奇怪的是在第四家又买了两斤。</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<fieldset data-id="33" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; min-width: 0px; color: rgb(62, 62, 62); white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 24px; border: 0px none; font-size: 14px; background-color: rgb(255, 255, 255);">
+		<h2 style="margin: 8px 0px 0px; padding: 0px; font-weight: 400; font-size: 16px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; color: rgb(172, 29, 16); min-height: 32px; border-bottom-width: 2px; border-bottom-style: solid; border-color: rgb(172, 29, 16); text-align: justify;">
+			<span placeholder="1" style="margin: 0px 8px 0px 0px; padding: 4px 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-radius: 80% 100% 90% 20%; color: rgb(255, 255, 255); display: block; float: left; line-height: 20px; border-color: rgb(214, 87, 76); background-color: rgb(172, 29, 16);">1</span><strong data-brushtype="text" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-color: rgb(172, 29, 16); color: inherit;">摊主一</strong></h2>
+	</fieldset>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太去买菜，路过水果摊，看到卖苹果的摊主，就问道：&ldquo;苹果怎么样啊?&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主回答：&ldquo;我的苹果特别好吃，又大又甜!&rdquo;。</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太摇摇头走开了<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（只讲产品卖点，不探求需求、都是无效介绍，做不了单）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<fieldset data-id="33" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; min-width: 0px; color: rgb(62, 62, 62); white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 24px; border: 0px none; font-size: 14px; background-color: rgb(255, 255, 255);">
+		<h2 style="margin: 8px 0px 0px; padding: 0px; font-weight: 400; font-size: 16px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; color: rgb(172, 29, 16); min-height: 32px; border-bottom-width: 2px; border-bottom-style: solid; border-color: rgb(172, 29, 16); text-align: justify;">
+			<span placeholder="1" style="margin: 0px 8px 0px 0px; padding: 4px 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-radius: 80% 100% 90% 20%; color: rgb(255, 255, 255); display: block; float: left; line-height: 20px; border-color: rgb(214, 87, 76); background-color: rgb(172, 29, 16);">2</span><strong data-brushtype="text" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-color: rgb(172, 29, 16); color: inherit;">摊主二</strong></h2>
+	</fieldset>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太又到一个摊子，问:&ldquo;你的苹果什么口味的？&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主措手不及：&ldquo;早上刚到的货，没来得及尝尝，看这红润的表皮应该很甜&rdquo;。</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太二话没说扭头就走了。<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（对产品了解一定是亲自体验出的，亲自体验感受出的才是卖点。只限于培训听到的知识，应对不了客户）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<fieldset data-id="33" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; min-width: 0px; color: rgb(62, 62, 62); white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 24px; border: 0px none; font-size: 14px; background-color: rgb(255, 255, 255);">
+		<h2 style="margin: 8px 0px 0px; padding: 0px; font-weight: 400; font-size: 16px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; color: rgb(172, 29, 16); min-height: 32px; border-bottom-width: 2px; border-bottom-style: solid; border-color: rgb(172, 29, 16); text-align: justify;">
+			<span placeholder="1" style="margin: 0px 8px 0px 0px; padding: 4px 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-radius: 80% 100% 90% 20%; color: rgb(255, 255, 255); display: block; float: left; line-height: 20px; border-color: rgb(214, 87, 76); background-color: rgb(172, 29, 16);">3</span><strong data-brushtype="text" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-color: rgb(172, 29, 16); color: inherit;">摊主三</strong></h2>
+	</fieldset>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">旁边的摊主见状问道：&ldquo;老太太，您要什么苹果，我这里种类很全!&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太：&ldquo;我想买酸点的苹果&rdquo;。</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主：&ldquo;我这种苹果口感比较酸，请问您要多少斤?&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太：&ldquo;那就来一斤吧&rdquo;。<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(客户需求把握了，但需求背后的动机是什么？丧失进一步挖掘的机会，属于客户自主购买，自然销售不能将单值放大）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<fieldset data-id="33" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; min-width: 0px; color: rgb(62, 62, 62); white-space: normal; widows: 1; font-family: 微软雅黑; line-height: 24px; border: 0px none; font-size: 14px; background-color: rgb(255, 255, 255);">
+		<h2 style="margin: 8px 0px 0px; padding: 0px; font-weight: 400; font-size: 16px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; color: rgb(172, 29, 16); min-height: 32px; border-bottom-width: 2px; border-bottom-style: solid; border-color: rgb(172, 29, 16); text-align: justify;">
+			<span placeholder="1" style="margin: 0px 8px 0px 0px; padding: 4px 10px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-radius: 80% 100% 90% 20%; color: rgb(255, 255, 255); display: block; float: left; line-height: 20px; border-color: rgb(214, 87, 76); background-color: rgb(172, 29, 16);">4</span><strong data-brushtype="text" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; border-color: rgb(172, 29, 16); color: inherit;">摊主四</strong></h2>
+	</fieldset>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">这时她又看到一个摊主的苹果便去询问：&ldquo;你的苹果怎么样啊?&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主：&ldquo;我的苹果很不错的，请问您想要什么样的苹果呢?&rdquo;<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（探求需求）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太：&ldquo;我想要酸一些的&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主:&ldquo;一般人买苹果都是要大的甜的，您为什么要酸苹果呢?&rdquo;<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（挖掘更深的需求）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太：&ldquo;儿媳妇儿怀孕了，想吃点酸的苹果&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主：&ldquo;老太太您对儿媳妇儿真是体贴啊，将来您媳妇儿一定能给您生一个大胖孙子。<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（适度恭维，拉近距离）</span>几个月以前，附近也有两家要生孩子的，她们就来我这里买苹果，<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（讲案例，第三方佐证）</span>您猜怎么着?这两家都生了个儿子，<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(构建情景，引发憧憬）</span><span class="Apple-converted-space">&nbsp;</span>你想要多少? （<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">封闭提问，默认成交，适时逼单 ，该出手时就出手）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太：&ldquo;我再来两斤吧。&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太被摊主说得高兴了<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(客户的感觉有了，一切都有了）</span>。摊主又对老太太介绍其他水果。</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主：&ldquo;橘子也适合孕妇吃，酸甜还有多种维生素，特别有营养<span class="Apple-converted-space">&nbsp;</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(连单，最大化购买，不给对手机会）</span>，您要是给媳妇儿来点橘子，她肯定开心!<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">（愿景引发）</span>&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太：&ldquo;是嘛!好那就来三斤橘子吧。&rdquo;</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主：&ldquo;您人可真好，媳妇儿要是摊上了您这样的婆婆，实在太有福气了!</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">&rdquo;<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(适度准确拍马屁，不要拍到马蹄子上）</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">摊主称赞着老太太，又说他的水果每天都是几点进货，天天卖光，保证新鲜<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(将单砸实，让客户踏实）</span>，要是吃好了，让老太太再过来<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;">(建立客户黏性）。</span></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">老太太被摊主夸得开心，说&ldquo;要是吃的好，让朋友也来买&rdquo;提着水果，满意的回家了。</span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		<img data-="" data-fail="0" data-ratio="1.0197841726618706" data-s="300,640" data-type="png" data-w="" src="/dededln/uploads/170731/1-1FI11G31a18.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important;" /></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; color: rgb(0, 112, 192); font-size: 18px;"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important;">那么，销售卖什么？</strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; background-color: rgb(255, 255, 255);">
+		&nbsp;</p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px; color: rgb(217, 33, 66);">生客卖的是礼貌</span></strong></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px; color: rgb(217, 33, 66);">熟客卖的是热情</span></strong></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px; color: rgb(217, 33, 66);">急客卖的是效率</span></strong></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">慢客卖的是耐心</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">有钱卖的是尊贵</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">没钱卖的是实惠</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">豪客卖的是仗义</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">时髦卖的是时尚</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">小气卖的是利益</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">享受型卖的是服务</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">挑剔型卖的是细节</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(217, 33, 66);"><strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px;">犹豫型卖的是保障</span></strong></span></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); widows: 1; font-family: 微软雅黑; font-size: 13.3333px; line-height: 2em; text-align: center; background-color: rgb(255, 255, 255);">
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box; word-wrap: break-word !important; font-size: 18px; color: rgb(217, 33, 66);">随和型卖的是认同感</span></strong></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em;">
+		<img data-="" data-fail="0" data-ratio="0.8944444444444445" data-s="300,640" data-type="png" data-w="540" src="/dededln/uploads/170731/1-1FI11G345113.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important;" /></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em;">
+		<img data-="" data-fail="0" data-ratio="0.5467625899280576" data-s="300,640" data-type="jpeg" data-w="" src="/dededln/uploads/170731/1-1FI11G409635.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important;" /><br style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" />
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-size: 20px; color: rgb(255, 76, 65);">德洛尼橱柜、衣柜、酒柜、榻榻米、书柜、电视柜、护墙板、浴室柜、等等系列产品，为您打造私人家居产品。</span></strong></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em;">
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-size: 20px; color: rgb(255, 76, 65);">装房子买家具，当然选德洛尼！</span></strong></p>
+	<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em;">
+		<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-size: 20px; color: rgb(255, 76, 65);">德洛尼定制家居，您值得拥有！</span></strong></p>
+</div>
+
+			
+		</article>
+	</div>
+	    
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+		      
+		      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+		      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+		      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+		      
+		      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+		      
+		      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+		      
+		      <li><a href="/dededln/a/std/">实体店</a></li>
+		      
+		      <li><a href="/dededln/member/index.php">会员中心</a></li>
+		      
+		      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+		      
+		    </ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 022-60902987</h2>
+				<!-- <p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p> -->
+				<p>Copyright © 德洛尼家居, Delonne home AlRights Reserved.33</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- 百度商桥客服 -->
+ <script>
+// var _hmt = _hmt || [];
+// (function() {
+//   var hm = document.createElement("script");
+//   hm.src = "https://hm.baidu.com/hm.js?15f7f8d2c4dae9b984d744d4567fa6f8";
+//   var s = document.getElementsByTagName("script")[0]; 
+//   s.parentNode.insertBefore(hm, s);
+// })();
+</script>
+
+</body>
+</html>

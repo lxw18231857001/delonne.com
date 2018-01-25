@@ -1,0 +1,207 @@
+<!-- 新闻列表 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+      <li><a href="/dededln/a/cpxl/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装系列</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      
+      <li><a href="/dededln/a/std/">实体店</a></li>
+      
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+          <form method="get" class="form">
+            <input type="text" name="search" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+	<!--大背景-->
+	<div class="bg_img" style="background-image:url(imgs/newsbanner.png)"></div>
+	<!--菜单-->
+	<div class="option" id="option">
+		<a href="news.asp"><span>企业动态</span></a>
+		<a href="nSale.asp"><span>促销信息</span></a>
+	</div>
+	<!--动态-->
+	<section id="box" class="box">
+		<!--企业动态-->
+		<div class="n_state" id="state">
+			<div class="n_tab">
+			<a href="news/dln1.asp" class="link">
+				<div class="n_tab_img" style="background-image:url(imgs/news_1.png)"></div>
+				<div class="n_tab_det">
+					<date>2016/08/27</date>
+					<span>企业动态</span>
+					<h3>德洛尼成立海外销售部，再创新高！</h3>
+					<p>近年来，我国橱柜市场需求量持续增长，几乎成为全球最具潜力的橱柜产品消费市场。并且，受高速发展的房地产市场影响，整体橱柜市场容量不断扩大，2011年橱柜市场容量达到了411亿元，预计2017年整体橱柜行业市场容量将达到1108亿元。德洛尼作为高端橱柜领导品牌，始终秉持着“做人、服务、品质”的宗旨，坚定品牌创新精神，保持健康稳定、快速发展步伐，驰骋橱柜市场。近日，德洛尼成立海外销售部，全面布局海外橱柜市场。
+					据了解，此次德洛尼成立海外销售部，首批人员已经派驻南非。8月份，更是在首都比勒陀尼亚签约工程订单4000套。德洛尼海外销售战团下一个战场是西班牙，西班牙团队将在9月份出发。近年来，国内橱柜市场发展一直保持良好势态。虽然受互联网大浪的冲击不小，但是一直坚持创新为动力的德洛尼却迎来新的发展机遇。如将传统产品改为整体橱柜，将产品更新换代，从单一的橱柜更新成全屋定制家具，让德洛尼先一步抢占市场商机。
+					此外，为迎合时代发展趋势，根据民众互联网消费习惯，德洛尼与各大网络平台取得合作，为其定制加工网上特销产品。并与线下各大经销商互动体验销售，推出短短2个月时间，市场出现井喷式增长，估计今年总体销售量约要增长300%。无论是什么行业，对一个品牌来说，这样的增长势头可以说是猛得相当惊人。让人毫不怀疑，一个发展势头如此强劲的品牌，将会创造新记录。因为随着时代发展，80、90后逐渐成为橱柜等家居市场的消费主力军。从目前这一消费人群的消费观念来看，可以发现，类似整体橱柜的年轻化产品更受青睐。而网购渠道的异军突起，已经成为时下最为流行的消费方式。
+					</p>
+				</div>
+			</a>
+			<a href="news/dln5.asp" class="link">
+				<div class="n_tab_img" style="background-image:url(imgs/news_1.png)"></div>
+				<div class="n_tab_det">
+					<date>2016/8/1</date>
+					<span>德洛尼分享</span>
+					<h3>北京德洛尼橱柜</h3>
+					<p>德洛尼橱柜、衣柜、酒柜、榻榻米、书柜、电视柜、护墙板、浴室柜、等等系列产品，为您打造私人家居产品。
+					   装房子买家具，当然选德洛尼！
+					   德洛尼定制家居，您值得拥有！</p>
+				</div>
+			</a>
+			<a href="news/dln6.asp" class="link">
+				<div class="n_tab_img" style="background-image:url(imgs/news_1.png)"></div>
+				<div class="n_tab_det">
+					<date>2016/09/21</date>
+					<span>【德洛尼橱柜】分享</span>
+					<h3>没有买卖就没有伪劣橱柜</h3>
+					<p>买橱柜就像买金子，
+                       一定要买符合行情的价格，
+                       市场价多少就按市价买，
+                       如果贪图廉价可能会买到一个假冒，
+                       买橱柜又像看医生，
+                       一定要到正规医院找专业医师，
+                       虽然花费大价格高，
+                       但对生命健康却能得到保障。</p>
+				</div>
+			</a>
+			<a href="news/dln7.asp" class="link" onactivate="return false;">
+			<!--http://mp.weixin.qq.com/s/TvrD6h3At_BHt52DeOfRlw-->
+				<div class="n_tab_img" style="background-image:url(imgs/news_1.png)"></div>
+				<div class="n_tab_det">
+					<date>2014/08/06</date>
+					<span>企业动态</span>
+					<h3>2014德洛尼橱柜招商火热开启</h3>
+					<p>德洛尼橱柜2014千店计划全面启动，火爆招商中，为了更多的加盟商能够找到真正适合自己的品牌，
+					德洛尼从品牌定位开始，打造高端品牌中端价格，能让大众消费得起的品牌，而且还大力拓展产品线，
+					以全屋定制产品为导向，让消费者订购产品时更轻松，更省心，更省钱，得到的是一站式服务。
+					为了更多的人能轻松的就买到德洛尼的产品，公司决定降低加盟门槛，
+					提供最好最优惠最大的支持给予加盟商，能让更多想创业的人加盟到德洛尼这个大家庭里，共同携手创造共赢！</p>
+				</div>
+			</a>
+				<a href="n_detail.asp" class="link">
+				<!-- https://mp.weixin.qq.com/s/R87pVzjn3eKlmc2l5myUqA -->
+					<div class="n_tab_img" style="background-image:url(imgs/news_1.png)"></div>
+					<div class="n_tab_det">
+						<date>2016/08/26</date>
+						<span>企业动态</span>
+						<h3>德洛尼与世界绿色环保板材获得者“泊诺斯”达成战略合作！</h3>
+						<p>21世纪，随着社会的稳定发展。百姓安居乐业，生活水平日渐小康，大大提升了生活质量。人们开始住上新房，用心地打造出一个个属于自己温馨的避风港。而家，最不可缺少的就是厨房。如何打造一个安全、实用且绿色环保的的厨房，橱柜选择很重要。</p>
+					</div>
+				</a>
+				<a href="n_detail.asp" class="link">
+				<!-- https://mp.weixin.qq.com/s/HuzImtBhE5u6NxASNDCweA -->
+					<div class="n_tab_img" style="background-image:url(imgs/news_1.png)"></div>
+					<div class="n_tab_det">
+						<date>2016/08/04</date>
+						<span>企业动态</span>
+						<h3>德洛尼全屋定制家居品牌</h3>
+						<p>北京福尔康橱柜有限公司位于首都北京，创建了“德洛尼”品牌，率先引进德国豪迈全套先进化生产设备。2006年以前，经进出口公司把产品销售于欧洲多个国家，成为中国橱柜行业最具影响的企业之一，德洛尼在全国橱柜市场上取得了辉煌业绩，为企业赢来了无数殊荣，公司先后通过ISO9002国际质量体系认证，获得“中国家具协会理事单位”、“中国著名品牌”、“中国橱柜十大品牌”、“CCTV推荐品牌”,“中国十环认证产品”、“亚洲橱柜十大知名品牌”等殊荣。</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		<!--企业动态...-->
+	</section>
+	<script>
+		addEventListener('DOMContentLoaded',function(){
+//			tab('option','box');
+		},false);
+	</script>
+<!-- 侧边栏 -->
+		<div class="sidebar">
+			<a href="javascript:;" class="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+			<a href="javascript:;" class="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+		</div>
+<!-- //侧边栏 -->
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+				<li><a href="link.htm">关于我们</a></li>
+				<li><a href="news.htm">新闻动态</a></li>
+				<li><a href="product.htm">产品系列</a></li>
+				<li><a href="case.htm">家装案例</a></li>
+				<li><a href="join.htm">招商加盟</a></li>
+				<li><a href="shop.htm">实体店</a></li>
+				<li><a href="call.htm">联系我们</a></li>
+			</ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 4006-0303-99</h2>
+				<p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+</body>
+</html>

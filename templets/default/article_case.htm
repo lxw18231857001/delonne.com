@@ -1,0 +1,47 @@
+<!-- 案例详情 -->
+{dede:include filename="head.htm"/}	
+<script src="{dede:global.cfg_templets_skin/}/js/banner.js" ></script>
+<link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/style/banner.css"/>
+	<!--全屏滚动-->
+<div class="banner">
+  <div class="b-img">
+  		{dede:field.id  function="Getimg_lunbo(@me,4)"/}
+	</div>
+  <!-- <div class="b-list"></div> -->
+  <a class="bar-left" href="#"><em></em></a>
+  <a class="bar-right" href="#"><em></em></a> 
+ </div>
+<!--end 全屏滚动-->
+	<!--介绍-->
+	<div class="cd_intr">
+		<header>
+			<div><span>{dede:field.typename/}</span><h1>{dede:field.shorttitle/}</h1></div>
+			<div><img src="{dede:global.cfg_templets_skin/}/images/cd_det_logo.png"/></div>
+		</header>
+		<article>
+			<div>项目介绍</div>
+			<div>
+				<column>
+					<h6>地址 :</h6>
+					<span>{dede:field.keywords/}</span>
+				</column>
+				<column>
+					<h6>商品名称 :</h6>
+					<span>{dede:field.title/}</span>
+				</column>
+				<column>
+					<h6>设计师 :</h6>
+					<span>{dede:field.writer/}</span>
+				</column>
+			</div>
+			<div >
+				{dede:field.body/}
+			</div>
+		</article>
+	</div>
+	   <script type="text/javascript">
+		// addEventListener('DOMContentLoaded',function(){
+		// 	cs_det();
+		// },false);
+	</script>
+	{dede:incude filename="footer.htm"/}

@@ -1,0 +1,32 @@
+<!-- 新闻详情 -->
+{dede:include filename="head.htm"/}
+	<section class="n_main" id="main">
+		<!--left-->
+		<div class="n_left" id="n_left">
+			<div class="n_left_font">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>会员中心</span>
+			</div>
+		</div>
+	</section>
+	<!--菜单-->
+	<div class="option" id="option">
+		{dede:channel type='son' currentstyle="<a href='~typeurl~'><span class='active'>~typename~</span></a> "} 
+        <a href="[field:typeurl/]"><span>[field:typename/]</span></a>
+        {/dede:channel}
+	</div>
+	<!--详情-->
+	<div id="atc_box">
+		<article class="atc">
+			<header>
+				<h1>{dede:field name="title"/}</h1>
+				<span><time>{dede:field name='pubdate' function='strftime("%Y.%m.%d %H:%I",@me)'/}</time>
+					  <name>By:&nbsp;&nbsp;&nbsp;{dede:field name='writer' /}</name></span>
+			</header>
+			
+				{dede:field name="body"/}
+			
+		</article>
+	</div>
+	    {dede:include filename="footer.htm"/}

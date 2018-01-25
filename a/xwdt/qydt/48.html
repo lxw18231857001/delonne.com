@@ -1,0 +1,364 @@
+<!-- 新闻详情 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="德洛尼官网德洛尼官网德洛尼官网" />
+  <meta name="keywords" content="德洛尼家居  德洛尼" />
+
+  <link rel="icon" href="/dededln/templets/default/images/32X32.ico"/>   
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+  <script src="/dededln/templets/default/js/area.js"></script>  
+
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      
+      <li><a href="/dededln/a/std/">实体店</a></li>
+      
+      <li><a href="/dededln/member/index.php">会员中心</a></li>
+      
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+        <form action="/dededln/plus/search.php" method="post" class="search-form">
+          <input type="text" name="keyword" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+        </form>
+
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+  <!-- 右侧边栏 -->
+
+<div class="sidebar">
+    <a href="javascript:;" class="sidebar_one" id="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+    <a href="javascript:;" class="sidebar_two" id="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+    <a href="javascript:;" class="sidebar_thr" id="sidebar_thr"><img src="/dededln/templets/default/images/talk.png"/></a>
+</div>
+<div id="orderPulishBox">
+    <form action="/dededln/plus/diy.php" enctype="multipart/form-data" method="post">
+     
+      <input type="hidden" name="action" value="post" />
+      <input type="hidden" name="diyid" value="1" />
+      <input type="hidden" name="do" value="2" />
+       <input type="hidden" name="time" value="" />
+
+        <div class="orderFurn" id="orderFurn">
+            <header class="orderFurnHead">
+                <h1>预约量尺</h1>
+                <b id="orderClose">X</b>
+            </header>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="姓名" name="username" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">中文2-10字</p>
+            </div>
+            <div class="orderBox" id="orderNameBox">
+                <input type="text" placeholder="联系方式" name="tel" class="order" id="orderName"/>
+
+                <p id="orderNameAlt">数字11位</p>
+            </div>
+            <div class="orderAddress">
+                <select id="province" name="province"></select>  
+                <select id="city" name="city"></select>  
+            <script>init_area();</script>
+            </div>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="详细联系地址" name="address" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">详细联系地址</p>
+            </div>
+            <div class="orderChecks">
+                <div><input name="style[]" type="checkbox" value="橱柜"/><h4>橱柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="衣柜"/><h4>衣柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="木门"/><h4>木门</h4></div>
+                <div><input name="style[]" type="checkbox" value="卫浴"/><h4>卫浴</h4></div>
+                <div><input name="style[]" type="checkbox" value="壁纸"/><h4>壁纸</h4></div>
+                <div><input type="text" placeholder="其他需求"  name="otherneeds" class="otherFit"/></div>
+            </div>
+            <input type="submit" name="orderIn" value="提交"   class="orderLogin">
+        </div>
+    </form>
+
+<!--  在线留言-->
+    <form method="post" action="/dededln/plus/guestbook.php" name="form1">
+         <input type='hidden' name='action' value='save' />
+        <div class="linePulish" id="linePulish">
+            <header class="linePulishHead">
+                <h1>在线留言</h1>
+                <b id="pulishClose">X</b>
+            </header>
+            <div class="pulishBox" id="pulishComNameBox">
+                <input type="text" placeholder="姓名" name="uname" class="pulish" id="pulishComName"/>
+
+                <p id="pulishComNameAlt">中文2-10字</p>
+            </div>
+            <div class="pulishBox" id="pulishNameBox">
+                <input type="text" placeholder="联系方式" name="qq" class="pulish" id="pulishName"/>
+                <p id="pulishNameAlt">数字11位</p>
+            </div>
+             <div class="pulishBox" id="pulishEmailBox">
+                <input type="text" placeholder="邮箱" name="email" class="pulish" id="pulishEmail"/>
+
+                <p id="pulishEmailAlt">数字/字母/-_.</p>
+            </div>
+            <div class="pulishAreaBox" id="pulishAreaBox">
+                <textarea placeholder="请输入留言内容" name="msg" class="pulish" id="pulishArea"></textarea>
+            </div>
+            <input type="submit" name="linePulishLogin" value="提交" class="linePulishLogin">
+        </div>
+    </form>
+
+
+</div>
+
+<script>
+    var gId = function (id) {
+        return document.getElementById(id);
+    }
+    gId('sidebar_one').onclick = function () {
+        gId('orderFurn').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('orderClose').onclick = function () {
+        gId('orderFurn').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+    gId('sidebar_thr').onclick = function () {
+        gId('linePulish').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('pulishClose').onclick = function () {
+        gId('linePulish').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+ // 姓名
+
+    $('#orderComName').on('input propertychange', function () {
+        if (!(comName.test($('#orderComName').val()))) {
+            $('#orderComNameAlt').text('姓名错误');
+            $('#orderComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderComNameAlt').text('');
+            $('#orderComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //联系方式
+
+    $('#orderName').on('input propertychange', function () {
+        if (!(phone.test($('#orderName').val()))) {
+            $('#orderNameAlt').text('联系方式错误');
+            $('#orderNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderNameAlt').text('');
+            $('#orderNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //在线留言：  公司名称 -- 姓名
+
+    $('#pulishComName').on('input propertychange', function () {
+        if (!(comName.test($('#pulishComName').val()))) {
+            $('#pulishComNameAlt').text('姓名错误');
+            $('#pulishComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishComNameAlt').text('');
+            $('#pulishComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 用户名 -- 联系方式
+
+    $('#pulishName').on('input propertychange', function () {
+        if (!(phone.test($('#pulishName').val()))) {
+            $('#pulishNameAlt').text('联系方式错误');
+            $('#pulishNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishNameAlt').text('');
+            $('#pulishNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+
+    // 邮箱
+
+    $('#pulishEmail').on('input propertychange', function () {
+        if (!(email.test($('#pulishEmail').val()))) {
+            $('#pulishEmailAlt').text('邮箱格式错误');
+            $('#pulishEmailBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishEmailAlt').text('');
+            $('#pulishEmailBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+</script>
+<!-- //侧边栏 -->
+
+	<section class="n_main" id="main">
+		<!--left-->
+		<div class="n_left" id="n_left">
+			<div class="n_left_font">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>新闻动态</span>
+			</div>
+		</div>
+	</section>
+	<!--菜单-->
+	<div class="option" id="option">
+		
+		<a href="/dededln/a/xwdt/qydt/"><span>企业动态</span></a>
+		
+		<a href="/dededln/a/xwdt/cxxx/"><span>促销信息</span></a>
+		
+	</div>
+	<!--详情-->
+	<div id="atc_box">
+		<article class="atc">
+			<header>
+				<h1>德洛尼成立海外销售部，再创新高！</h1>
+				<span><time>2017.08.01 18:06</time>
+					  <name>By:&nbsp;&nbsp;&nbsp;admin</name></span>
+			</header>
+			
+				<p>
+	德洛尼成立海外销售部，全面布局海外橱柜市场</p>
+<p>
+	近年来，我国橱柜市场需求量持续增长，几乎成为全球最具潜力的橱柜产品消费市场。并且，受高速发展的房地产市场影响，整体橱柜市场容量不断扩大，2011年橱柜市场容量达到了411亿元，预计2017年整体橱柜行业市场容量将达到1108亿元。德洛尼作为高端橱柜领导品牌，始终秉持着&ldquo;做人、服务、品质&rdquo;的宗旨，坚定品牌创新精神，保持健康稳定、快速发展步伐，驰骋橱柜市场。近日，德洛尼成立海外销售部，全面布局海外橱柜市场。</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-align: center; line-height: 24px; background-color: rgb(255, 255, 255);">
+	<br />
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 黑体; line-height: 31.5px; font-size: 21px;"><img data-="" data-fail="0" data-ratio="0.24971363115693013" data-s="300,640" data-type="png" data-w="1746" src="/dededln/uploads/170731/1-1FI1161G2342.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; float: left;" /><br style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;" />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img data-="" data-fail="0" data-ratio="0.75" data-s="300,640" data-type="jpeg" data-w="800" src="/dededln/uploads/170731/1-1FI1161TT60.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important;" /></span></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p>
+	&nbsp;</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	&nbsp;</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体; line-height: 24px; font-size: 16px;">据了解，此次德洛尼成立海外销售部，首批人员已经派驻南非。<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">8</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">月份，更是在首都比勒陀尼亚签约工程订单</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">4000</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">套。德洛尼海外销售战团下一个战场是西班牙，西班牙团队将在</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">9</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">月份出发。近年来，国内橱柜市场发展一直保持良好势态。虽然受互联网大浪的冲击不小，但是一直坚持创新为动力的德洛尼却迎来新的发展机遇。如将传统产品改为整体橱柜，将产品更新换代，从单一的橱柜更新成全屋定制家具，让德洛尼先一步抢占市场商机。</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img data-="" data-fail="0" data-ratio="0.661648177496038" data-s="300,640" data-type="png" data-w="1262" src="/dededln/uploads/170731/1-1FI1161930B6.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; font-family: 宋体; line-height: 24px; visibility: visible !important; float: left;" /></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	&nbsp;</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体; line-height: 24px; font-size: 16px;">此外，为迎合时代发展趋势，根据民众互联网消费习惯，德洛尼与各大网络平台取得合作，为其定制加工网上特销产品。并与线下各大经销商互动体验销售，推出短短<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">2</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">个月时间，市场出现井喷式增长，估计今年总体销售量约要增长</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">300%</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">。无论是什么行业，对一个品牌来说，这样的增长势头可以说是猛得相当惊人。让人毫不怀疑，一个发展势头如此强劲的品牌，将会创造新记录。因为随着时代发展，</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">80</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">、</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">90</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">后逐渐成为橱柜等家居市场的消费主力军。从目前这一消费人群的消费观念来看，可以发现，类似整体橱柜的年轻化产品更受青睐。而网购渠道的异军突起，已经成为时下最为流行的消费方式。</span></span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体; line-height: 24px; font-size: 16px;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img data-="" data-fail="0" data-ratio="0.6741071428571429" data-s="300,640" data-type="png" data-w="1344" src="/dededln/uploads/170731/1-1FI11619501N.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; float: left;" /></span></span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体; line-height: 24px; font-size: 16px;">梁小姐就是德洛尼橱柜的忠实粉丝，梁小姐表示，自己新家装修家居定制就是来自德洛尼，还推荐了亲友也选择德洛尼。梁小姐表示，之所以多数人选择网购橱柜，是因为价格更为实惠。同时，橱柜产品更为丰富，可供选择空间大，可以最大程度上满足消费者的个性需求。另一大因素，则是德洛尼产品质量有保证，产品通过<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">ISO9002</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">国际质量体系认证。此外，我们还了解到德洛尼与世界绿色家居环保获得者&ldquo;泊诺思&rdquo;战略性合作，公司</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: Calibri;">80%</span><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体;">的原材料采用泊诺思绿色环保板材，做绿色环保家居的领先者。</span></span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-indent: 32px; line-height: 24px; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; font-family: 宋体; line-height: 24px; font-size: 16px;">无论是从布局海外市场，还是抢滩互联网橱柜市场，从德洛尼所取得的成绩来看，德洛尼的战略是成功的。同时，也见证了德洛尼书写的橱柜品牌传奇。我们相信，以德洛尼卓越的质量与良好口碑，在海外市场同样能够取得好成绩。</span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img data-="" data-fail="0" data-ratio="0.5952227243382827" data-s="300,640" data-type="png" data-w="1549" src="/dededln/uploads/170731/1-1FI1162011L2.jpg" style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; overflow-wrap: break-word !important; visibility: visible !important; float: left;" /></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	德洛尼全屋定制家居品牌</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	网址：www.ykxdln.com</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);">
+	&nbsp;</p>
+<hr style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; background-color: rgb(255, 255, 255);" />
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; clear: both; min-height: 1em; color: rgb(62, 62, 62); font-family: 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', Arial, sans-serif; font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; line-height: 25.6000003814697px; orphans: auto; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-align: center; background-color: rgb(255, 255, 255);">
+	动动你的手指，看完记得分享哦！</p>
+
+			
+		</article>
+	</div>
+	    
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+		      
+		      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+		      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+		      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+		      
+		      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+		      
+		      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+		      
+		      <li><a href="/dededln/a/std/">实体店</a></li>
+		      
+		      <li><a href="/dededln/member/index.php">会员中心</a></li>
+		      
+		      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+		      
+		    </ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 022-60902987</h2>
+				<!-- <p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p> -->
+				<p>Copyright © 德洛尼家居, Delonne home AlRights Reserved.33</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- 百度商桥客服 -->
+ <script>
+// var _hmt = _hmt || [];
+// (function() {
+//   var hm = document.createElement("script");
+//   hm.src = "https://hm.baidu.com/hm.js?15f7f8d2c4dae9b984d744d4567fa6f8";
+//   var s = document.getElementsByTagName("script")[0]; 
+//   s.parentNode.insertBefore(hm, s);
+// })();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!-- 产品列表 -->
+{dede:include filename="head.htm"/}
+
+<!-- 下拉菜单 -->
+ <script type='text/javascript' src='{dede:global.cfg_templets_skin/}/js/dropdown.js'></script>
+
+<div style="background: #F5F5F5;padding: 1px 0;">
+<article class="p_artc">
+<!--菜单-->
+<!--头-->
+<div class="p_cont_h"><img src="{dede:global.cfg_templets_skin/}/images/1.png" class="p_cont_h1" />
+  <div class="p_cont_h2"><span>DELONNE</span>
+    <p>KITCHEN&nbsp;橱柜系列</p>
+  </div>
+</div>
+<!--产品菜单-->
+<div class="option" id="prodctOption">
+    <ul id="navMenu" >
+    {dede:channelartlist typeid="3,14,16" row="2" }
+      <li><a href="#" rel="dropmenu{dede:field.typeid/}" target=""><span>{dede:field name="typename"/}</span></a></li>
+    {/dede:channelartlist}
+    <!-- </ul> -->
+<!-- 一级 -->
+<!-- <ul id="navul" class="cl"> -->
+    {dede:type typeid="24" }
+            <li>
+              <a href="[field:typeurl/]" target=""><span>[field:typename/]</span></a>
+            </li>
+      {/dede:type}
+     {dede:type typeid="18"}
+          <li>
+            <a href="[field:typeurl/]" target=""><span>[field:typename/]</span></a>
+          </li>
+    {/dede:type}
+    {dede:type typeid="15"}
+          <li>
+            <a href="[field:typeurl/]" target=""><span>[field:typename/]</span></a>
+          </li>
+    {/dede:type}
+     {dede:type typeid="17"}
+          <li>
+            <a href="[field:typeurl/]" target=""><span>[field:typename/]</span></a>
+          </li>
+    {/dede:type}
+  </ul>
+    {dede:channelartlist typeid="3,14,16" row="2" }
+    <ul  class="dropMenu" id="dropmenu{dede:field.typeid/}">
+        {dede:channel type="son"  noself="yes"}
+        <li ><a href='[field:typeurl/]'>[field:typename/]</a></li>
+        {/dede:channel}
+    </ul>
+    {/dede:channelartlist}
+</div>
+    <script>
+        $(document).ready(function(){
+            var oli = $("[rel='dropmenu14']").width();
+            $("#dropmenu14").width(oli);
+            var oli2 = $("[rel='dropmenu16']").width();
+            $("#dropmenu16").width(oli2);
+        });
+    </script>
+<!--//菜单-->
+<!-- content -->
+<section class="p_box" id="p_box">
+  <div class="p_cont" id="p_cont1">
+    <ul>
+      {dede:list pagesize='' orderby='sortrank' pagesize='6'}
+      <li>
+        <a href="[field:arcurl /]">
+          <img src="[field:litpic function=firstimg('@me')/]" border="0" alt="[field:fulltitle /]">
+          <span>[field:title /]</span>
+        </a>
+      </li>
+    {/dede:list}
+    </ul>
+  </div>
+</section>
+    <script type="text/javascript">cssdropdown.startchrome("navMenu")</script>
+    <!--翻页-->
+<aside class="page" id="productPage">
+  <ul>
+    {dede:pagelist listsize='4' listitem='indexpre pageno next end'/}
+  </ul>
+</aside>
+<!--翻页...-->
+</article>
+</div>
+{dede:include filename="footer.htm"/}
+    
+    
+     

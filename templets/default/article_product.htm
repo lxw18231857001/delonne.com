@@ -1,0 +1,35 @@
+<!--产品详情-->
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>商品详情</title>
+  <link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="{dede:global.cfg_templets_skin/}/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="{dede:global.cfg_templets_skin/}/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="{dede:global.cfg_templets_skin/}/style/phone.css"/>
+</head>
+<body>
+   	<div id="p_det">
+   		<b onclick="window.history.back(-1);">X</b>
+   		<header>
+   			<div>
+   				<span>{dede:field name="typename"/}</span>
+   				<h1>COMET</h1>
+   				<span>{dede:field name="title"/}</span>
+   			</div>
+        <p>{dede:field name='body'/}</p>
+   		</header>
+
+   		<aside id="p_det_lis">
+   			<ul>
+   				{dede:field.id  function="Getimg_product(@me,10)"/}
+   			</ul>
+   		</aside>
+      
+   	</div>
+  <!--商品详情...-->
+</body>
+</html>

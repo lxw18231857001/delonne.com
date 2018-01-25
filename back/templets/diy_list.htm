@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=<?php echo $cfg_soft_lang; ?>">
+<title><?php echo $diy->name;?></title>
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+</head>
+<body background='images/allbg.gif' leftmargin='8' topmargin='8'>
+<div class="bodytitle">
+	<div class="bodytitleleft"></div>
+	<div class="bodytitletxt" style="padding-left:10px;"><?php echo $diy->name;?>内容列表</div>
+</div>
+<form action="diy_list.php" method="post">
+<input type="hidden" name="diyid" value="<?php echo $diyid;?>" />
+<table width="98%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#CFCFCF;">
+<tr>
+	<td colspan="3" height="28" background='images/tbg.gif'>
+	<div style='float:left'>&nbsp;<a href='diy_main.php'><b>自定义表单管理</b></a> &gt; <b>内容列表</b></div>
+	<div style='float:right;padding-right:8px;'>
+		<!-- <a href="../plus/diy.php?action=list&diyid=<?php echo $diy->diyid; ?>" target="_blank"><img src='images/gtk-tmp.png' align='left' title='预览' alt='预览' /><u>前台预览</u></a> -->
+		<a href="javascript:void(0)" onclick="location.reload()">[刷新]</a>
+	</div>
+	</td>
+</tr>
+<tr><td colspan="3" bgcolor="#ffffff">
+<table width="98%" border="0" cellpadding="1" cellspacing="1" align="center" class="tbtitle" style="background:#CFCFCF;">
+<tr style="text-align:center;background:#FDE48E;">
+	<td>id</td>
+	<td>审核</td>
+	<td>姓名</td>
+	<td>电话</td>
+	<td>省份</td>
+	<td>地市</td>
+	<td>详细地址</td>
+	<td>预约类型</td>
+	<td>其他需求</td>
+	<td>预约时间</td>
+	<td>操作</td>
+</tr>
+<style>
+.msgfocus{
+background:#F8FDE3;
+}
+.msgfocus:hover{
+background:#D6EC7E;
+}
+</style>
+{dede:datalist}
+<?php 
+if(!empty($fields))
+{$allowhtml = array('htmltext');
+$fields['sta'] = $fields['ifcheck'] == 1 ? '已审核' : '未审核';
+?>
+
+<tr style="text-align:center;" class="msgfocus">
+	<td>
+	<input type="checkbox" name="id[]" value="<?php echo $fields['id']?>" class="np" /><?php echo $fields['id']?>
+	</td>
+	<td><?php echo $fields['sta']?></td>
+	<td><?php echo $fields['username']?></td>
+	<td><?php echo $fields['tel']?></td>
+	<td><?php echo $fields['province']?></td>
+	<td><?php echo $fields['city']?></td>
+	<td style="width:20%;text-align:left;"><?php echo $fields['address']?></td>
+	<td><?php echo $fields['style']?></td>
+	<td><?php echo $fields['otherneeds']?></td>
+	<td><?php echo date('Y-m-d H:i:s',$fields['time']);?></td>
+	<td><a href="diy_list.php?action=edit&diyid=<?php echo $diy->diyid ?>&id=<?php echo $fields['id']?>"><img src="images/feedback-edit.gif" border="0" width="45" height="18"></a></td>
+</tr>
+
+<?php
+} else
+{
+   echo "<tr><td bgcolor=\"#ffffff\">暂无记录</td></tr>";
+}
+?>
+{/dede:datalist}
+</table>
+</td></tr>
+<tr><td colspan="3" bgcolor="#ffffff">{dede:pagelist listsize=5 /}</td></tr>
+<tr>
+<td colspan="3" height='36' align="center" bgcolor="#F8FCF1">
+	<label><input type="radio" name="action" value="check" class='np' />审核</label>
+	<label><input type="radio" name="action" value="delete"  class='np' />删除</label>
+	&nbsp;&nbsp;
+	<input type="submit" name="submit" value="提交" class='np coolbg' />
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

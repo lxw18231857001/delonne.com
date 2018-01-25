@@ -1,0 +1,123 @@
+<!-- 资料下载 -->
+{dede:include filename="head.htm"/}
+
+<header class="ct_main" id="main" style="background-image:url({dede:field name='typeimg'/})">
+    <!--left-->
+    <!-- <div class="ctd_left" id="ctd_left">
+        <div class="ctd_left_font">
+            <h1>CUSTOM</h1>
+
+            <p>DREAM HOME</p>
+            <span>会员中心</span>
+        </div>
+    </div> -->
+    <!--left...-->
+</header>
+<!--菜单-->
+
+<div class="option" id="option">
+   {dede:channel type='son' currentstyle="<a href='#'><span class='active'>~typename~</span></a> "} 
+        <a href="[field:typeurl/]"><span>[field:typename/]</span></a>
+        {/dede:channel}
+    <!-- <a href="javascript:;"><span>公司通知</span></a> -->
+</div>
+<!--内容-->
+  
+<contain class="centerBox">
+    <artical class="centerDown">
+        <header>文本资料</header>
+       {dede:list  titlen='80' orderby='pubdate' pagesize='6'}
+            <a href="#" class="link">
+                 <div class="centerDownList">
+                     <span>[field:title function="cn_substr(@me,60)/]</span>
+                    <a href="javascript:;" id="[field:softlinks/]"  class="downloads">立即下载</a>
+                </div>
+            </a>
+        {/dede:list}
+    </artical>
+    <aside class="centerDownAside">
+        <header>简介</header>
+        <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=y0174gd34tk&auto=0" allowFullScreen="true" quality="high" width="480" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+    </aside>
+</contain>
+<!--翻页-->
+<aside class="page" id="casePage">
+        <ul>
+         {dede:pagelist listsize='4'  listitem ="indexpre pageno next end"/}
+        </ul>
+</aside>
+<!--翻页...-->
+<section class="videoDown">
+    <header>视频资料</header>
+
+    <content class="videoDownLoad">
+          <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=y0174gd34tk&auto=0" allowFullScreen="true" quality="high" width="450" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+          <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=k0138o53zrv&auto=0" allowFullScreen="true" quality="high" width="450" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+         <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=n0539c9g5sw&auto=0" allowFullScreen="true" quality="high" width="450" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+          <!-- <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=y0174gd34tk&auto=0" allowFullScreen="true" quality="high" width="400" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed> -->
+        <!-- {dede:arclist typeid='51' titlelen='30'  addfields='softlinks' row='8'}
+                <div >
+                        <video class="video" poster="[field:picname/]">
+                            <source src="[field:softlinks/]" type="video/mp4">
+                            您的浏览器不支持 video 标签。
+                        </video>
+                        <span>
+                            <h6>[field:title/]</h6>
+                            <a href="[field:arcurl/]" ><h6>下载 [field:arcurl/]</h6></a>
+                        </span>
+                </div>
+        {/dede:arclist} -->
+    </content>
+ 
+
+
+</section>
+</body>
+</html>
+<script>
+    var gCl = function (className) {
+        return document.getElementsByClassName(className);
+    }
+    for (var i = 0; i < gCl('video').length; i++) {
+        gCl('video')[i].onclick = function () {
+            this.play();
+            this.controls = true;
+        }
+    }
+</script>
+
+<!-- 下载前验证 -->
+<script>
+    $(function(){
+
+        $(".centerDownList .downloads").each(function(){
+        $(this).click(function(){
+            var uuu =$(this).attr('id');
+            $.ajax({
+                type: 'get',
+                dataType: 'json',
+                url: '/dededln/memberYanZheng.php',
+                data: {},
+                success: function(data) {
+                    if (data.login == 1){       
+                        // alert('33');
+                        // return false;
+                        // window.location.href=""+obj.id+"";
+                          window.location.href=uuu;
+                    
+                        //跳转到下载链接
+                    }else{
+                    
+                       alert('请登录后再进行下载 !');
+                       window.location.href='/dededln/member/login.php';
+                       //这里可以将你找好的弹出插件放这里
+                    }
+                }
+            });
+        });
+
+        });
+    })
+</script>
+
+{dede:include filename="footer.htm"/}

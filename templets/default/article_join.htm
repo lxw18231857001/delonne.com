@@ -1,0 +1,105 @@
+<!-- 招商加盟 -->
+{dede:include filename="head.htm"/}
+<script type="text/javascript">
+		function chkform(){ 
+		//验证姓名
+		 var str = document.getElementById('uname').value.trim(); 
+		 	if(str.length==0){
+		 		alert("您的姓名不能为空 ！");
+				uname.focus(); return false;
+		 	}
+		 // 验证手机
+		  var shouji = document.getElementById('qq').value.trim(); 
+		 	if(shouji.length==0){
+		 		alert("手机号不能为空 !");
+				qq.focus(); return false;
+		 	}else if(shouji.length!=0){ 
+		 		reg=/(^1[0-9]{10}$)|(^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$)/; 
+				if(!reg.test(shouji)){ 
+				alert("手机号输入不合法!");qq.focus();return false;
+				} 
+		 	}
+
+
+		}
+ </script>
+ <!--地址选择器-->
+<script type='text/javascript' src='{dede:global.cfg_templets_skin/}/js/citys.js'></script>
+<script type='text/javascript' src='{dede:global.cfg_templets_skin/}/js/jquery.citys.js'></script>
+		<!-- banner -->
+		<img class="whell_img" src="{dede:field name='typeimg'/}">
+	<!--字体-->
+	<div class="fonts">
+		<h1>德洛尼<b style="color:#F39800;">要干什么</b></h1>
+		<p>崛起中的德洛尼，10年的沉淀与磨练，成为亚洲橱柜十大品牌之一的佼佼者，为各大专卖店创下一个又一个的传奇神话。德洛尼2014年从新定位，重拳出击，打造中国北方橱柜一流品牌，千店计划全面启动，诚征各县市加盟代理商。德洛尼与您共赢未来。</p>
+	</div>
+	<!--大背景2-->
+	<div class="j_two" style="background-image:url({dede:global.cfg_templets_skin/}/images/bg2_join.png)"></div>
+	<!--three free-->
+	<div class="free">
+		<h1>三免</h1>		
+		<content>
+			<div><img src="{dede:global.cfg_templets_skin/}/images/free_1.png"/><span>免费加盟</span></div>
+			<div><img src="{dede:global.cfg_templets_skin/}/images/free_2.png"/><span>免费装修</span></div>
+			<div><img src="{dede:global.cfg_templets_skin/}/images/free_3.png"/><span>免费上样</span></div>
+		</content>
+	</div>
+	<!--three free...-->
+	<!--five help-->
+	<div class="help">
+		<h1>五帮</h1>		
+		<content>
+			<div>
+				<column><row><img src="{dede:global.cfg_templets_skin/}/images/help_1.png" /></row><span>一帮店面运营管理监督</span></column>
+				<column><row><img src="{dede:global.cfg_templets_skin/}/images/help_2.png" /></row><span>四帮安装售后培训</span></column>
+			</div>
+			<div>
+				<column><row><img src="{dede:global.cfg_templets_skin/}/images/help_3.png" /></row><span>二帮导购销售培训</span></column>
+				<column><row><img src="{dede:global.cfg_templets_skin/}/images/help_4.png" /></row><span>五帮促销活动策划</span></column>
+			</div>
+			<div>
+				<column><row><img src="{dede:global.cfg_templets_skin/}/images/help_5.png" /></row><span>三帮量尺设计辅导</span></column>
+				<column><row><img src="{dede:global.cfg_templets_skin/}/images/help_6.png" /></row><span>N大贴心政策助您开店</span></column>
+			</div>
+		</content>
+	</div>
+	<!--five help...-->
+	<!--大背景3-->
+	<div class="j_thr" style="background-image:url('{dede:global.cfg_templets_skin/}/images/join_net.png')">
+		<p>德洛尼在2014年与各大网络强强联合，有效的传播品牌途径，提升品牌口碑，打造定制家居产品电子商务平台，让更多的人足不出户就能了解到德洛尼更多的信息，购买到真正德洛尼原装正品。为各专卖店提供更好的销售平台。</p>
+	</div>
+	<!--大背景4-->
+	<div class="j_four"><h1>店铺风采</h1><div style="background-image:url({dede:global.cfg_templets_skin/}/images/join_shop.png)"></div></div>
+	<!-- 固定图 -->
+		<slider class="joinAdd">
+	<div class="joinAddOne">
+	<h3>现在加入德洛尼</h3>
+	<h1>免费领取开业大礼</h1>
+	</div>
+<!-- 固定栏 -->
+	<div class="joinAddTwo">
+	<h1><span>快速合作</span>定制梦想家<b>三免五帮强势助您开店！</b></h1>
+		<form method="post" action="{dede:global.cfg_cmsurl/}/plus/guestbook.php" name="form1" onsubmit="return chkform(this)">
+			 <input type='hidden' name='action' value='save' />
+		<div class="joinInfo" id=" ">
+			<input type="text" placeholder="请输入您的姓名" name="uname" class="joinInfoLi" id="uname"/>
+			<input type="text" placeholder="请输入联系方式" name="qq" class="joinInfoLi" id="qq"/>
+			<!-- <input type="text" placeholder="省份" name="province" class="joinInfoLi" id=" "/>
+			<input type="text" placeholder="城市" name="city" class="joinInfoLi" id=" "/> -->
+            <div id="demo1" class="citys joinInfoLi">
+					<select name="province" class="joinInfoLi"></select>
+					<select name="city" class="joinInfoLi"></select>
+					<select name="area" class="joinInfoLi"></select>
+			</div>
+			<script type="text/javascript">
+				$('#demo1').citys({valueType:'name',province:'北京',city:'朝阳',area:''});
+			</script>
+			<input type="hidden" placeholder="验证留言" name="msg" class="joinInfoLi" value="有加盟意向者"/>
+			<input type="submit" value="提交" class="joinInfoLi joinInfoSub"/>
+		</div>
+		</form>
+	</div>
+<!-- //固定栏 -->
+	<div class="joinAddThr"></div>
+	</slider>
+{dede:include filename="footer.htm"/}

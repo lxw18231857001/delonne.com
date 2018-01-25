@@ -1,0 +1,52 @@
+<!-- 家装案例列表页 -->
+{dede:include filename="head.htm"/}
+	<!-- <div class="bgcolor"></div> -->
+	
+	<div class="c_main" id="main" style="background-image:url({dede:field name='typeimg'/})">
+		<!--left
+		<div class="c_left" id="c_left">
+			<div class="c_left_font">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>家装案例</span>
+			</div>
+		</div>-->
+	</div>
+	<!--菜单-->
+	<div class="option" id="option">
+        {dede:channel type='son' currentstyle="<a href='~typeurl~'><span class='active'>~typename~</span></a> "} 
+        <a href="[field:typeurl/]"><span>[field:typename/]</span></a>
+        {/dede:channel}
+	</div>
+	<!--主区-->
+	<article id="artc">
+	    <section class="section" id="sect1">
+	    	<ul>
+
+			{dede:list titlelen='60' pagesize='5' orderby='pubdate'}
+	    		<li class="list">
+	    		<div style="background-image:url([field:litpic/])"></div>
+	    			<div>
+	    				<h1>[field:title/]</h1>
+	    				<P>[field:description/]</P>
+							<!-- [field:body/] -->
+	    				<a href="[field:arcurl/]" target="_blank">查看详情</a>
+	    			</div>
+	    		</li>
+				{/dede:list}
+	    	</ul>
+	    </section>
+   </article>
+   <!--翻页-->
+   	<aside class="page" id="casePage">
+   		<ul>
+				{dede:pagelist listsize='2'  listitem ="indexpre pageno next end"/}
+   		</ul>
+   	</aside>
+	   	<script type="text/javascript">
+		addEventListener('DOMContentLoaded',function() {
+//			tab('option','artc');
+		}, false);
+</script>
+
+	{dede:include filename="footer.htm"/}

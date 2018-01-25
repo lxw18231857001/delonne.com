@@ -1,0 +1,14 @@
+INSERT INTO `dede_search_keywords` VALUES('1','在这里搜索...','在这里搜索... 在这里 搜索','1','0','1499851542','0','0');
+INSERT INTO `dede_search_keywords` VALUES('3','gf','gf','1','0','1503974902','0','0');
+INSERT INTO `dede_search_keywords` VALUES('4','家具','家具','66','3','1503996124','0','0');
+INSERT INTO `dede_search_keywords` VALUES('5','德洛尼成立海外销售部，','德洛尼成立海外销售部， 德洛 成立 海外 销售部','9','1','1503975543','0','0');
+INSERT INTO `dede_search_keywords` VALUES('6','橱柜系列','橱柜系列 橱柜 系列','6','7','1503976249','0','0');
+INSERT INTO `dede_search_keywords` VALUES('7','家装','家装','1','0','1503976401','0','0');
+INSERT INTO `dede_search_keywords` VALUES('8','hiuah','hiuah','3','0','1503988258','0','0');
+INSERT INTO `dede_search_keywords` VALUES('9','板式','板式','8','10','1503991544','0','0');
+INSERT INTO `dede_search_keywords` VALUES('10','发给','发给','3','0','1503995289','0','0');
+INSERT INTO `dede_search_keywords` VALUES('11','发顺丰','发顺丰 顺丰','4','0','1503995425','0','0');
+INSERT INTO `dede_search_keywords` VALUES('12','大防守打法','大防守打法 打法 防守','3','0','1503995413','0','0');
+INSERT INTO `dede_search_keywords` VALUES('13','发','发','3','6','1503995720','0','0');
+INSERT INTO `dede_search_keywords` VALUES('14','通知','通知','2','6','1503996108','0','0');
+INSERT INTO `dede_search_keywords` VALUES('15','电饭锅','电饭锅 电饭锅','2','1','1503996342','0','0');

@@ -1,0 +1,12 @@
+INSERT INTO `dede_yuyue` VALUES('29','1','给对方','18231857000','天津市','南开区','电饭锅','衣柜-木门','','人特意');
+INSERT INTO `dede_yuyue` VALUES('23','0','电饭锅','18231857000','北京市','宣武区','水电费','橱柜-衣柜','','null');
+INSERT INTO `dede_yuyue` VALUES('24','0','电饭锅','18231857000','北京市','宣武区','水电费','橱柜-衣柜','','null');
+INSERT INTO `dede_yuyue` VALUES('25','0','电饭锅','18231857000','上海市','徐汇区','dfg 水电费','橱柜-衣柜','','null');
+INSERT INTO `dede_yuyue` VALUES('26','0','gdfg','dfg','北京市','宣武区','dfgsdg','衣柜-木门','','null');
+INSERT INTO `dede_yuyue` VALUES('27','0','水电费','18231857000','天津市','南开区','是十分大水电费第三方','衣柜-木门','','null');
+INSERT INTO `dede_yuyue` VALUES('28','1','给对方','18231857000','河北省','张家口市','电饭锅','衣柜','','null');
+INSERT INTO `dede_yuyue` VALUES('30','0','第三方','水电费','天津市','和平区','第三方','衣柜-木门','1504148989','33');
+INSERT INTO `dede_yuyue` VALUES('31','0','梵蒂冈地方','3333','北京市','东城区','电饭锅','橱柜-衣柜-木门-卫浴-壁纸','1504149086','水电费');
+INSERT INTO `dede_yuyue` VALUES('32','1','g','df','上海市','徐汇区','sdfs','衣柜','1504158230','fg ');
+INSERT INTO `dede_yuyue` VALUES('33','1','uyi','fdh','北京市','西城区','dfg','衣柜','1504231021','hh');
+INSERT INTO `dede_yuyue` VALUES('34','0','cg','sdf','北京市','西城区','sdf','衣柜','1504231703','sdf');

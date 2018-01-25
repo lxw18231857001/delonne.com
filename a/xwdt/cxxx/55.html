@@ -1,0 +1,330 @@
+<!-- 新闻详情 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="德洛尼官网德洛尼官网德洛尼官网" />
+  <meta name="keywords" content="德洛尼家居  德洛尼" />
+
+  <link rel="icon" href="/dededln/templets/default/images/32X32.ico"/>   
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+  <script src="/dededln/templets/default/js/area.js"></script>  
+
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      
+      <li><a href="/dededln/a/std/">实体店</a></li>
+      
+      <li><a href="/dededln/member/index.php">会员中心</a></li>
+      
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+        <form action="/dededln/plus/search.php" method="post" class="search-form">
+          <input type="text" name="keyword" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+        </form>
+
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+  <!-- 右侧边栏 -->
+
+<div class="sidebar">
+    <a href="javascript:;" class="sidebar_one" id="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+    <a href="javascript:;" class="sidebar_two" id="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+    <a href="javascript:;" class="sidebar_thr" id="sidebar_thr"><img src="/dededln/templets/default/images/talk.png"/></a>
+</div>
+<div id="orderPulishBox">
+    <form action="/dededln/plus/diy.php" enctype="multipart/form-data" method="post">
+     
+      <input type="hidden" name="action" value="post" />
+      <input type="hidden" name="diyid" value="1" />
+      <input type="hidden" name="do" value="2" />
+       <input type="hidden" name="time" value="" />
+
+        <div class="orderFurn" id="orderFurn">
+            <header class="orderFurnHead">
+                <h1>预约量尺</h1>
+                <b id="orderClose">X</b>
+            </header>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="姓名" name="username" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">中文2-10字</p>
+            </div>
+            <div class="orderBox" id="orderNameBox">
+                <input type="text" placeholder="联系方式" name="tel" class="order" id="orderName"/>
+
+                <p id="orderNameAlt">数字11位</p>
+            </div>
+            <div class="orderAddress">
+                <select id="province" name="province"></select>  
+                <select id="city" name="city"></select>  
+            <script>init_area();</script>
+            </div>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="详细联系地址" name="address" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">详细联系地址</p>
+            </div>
+            <div class="orderChecks">
+                <div><input name="style[]" type="checkbox" value="橱柜"/><h4>橱柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="衣柜"/><h4>衣柜</h4></div>
+                <div><input name="style[]" type="checkbox" value="木门"/><h4>木门</h4></div>
+                <div><input name="style[]" type="checkbox" value="卫浴"/><h4>卫浴</h4></div>
+                <div><input name="style[]" type="checkbox" value="壁纸"/><h4>壁纸</h4></div>
+                <div><input type="text" placeholder="其他需求"  name="otherneeds" class="otherFit"/></div>
+            </div>
+            <input type="submit" name="orderIn" value="提交"   class="orderLogin">
+        </div>
+    </form>
+
+<!--  在线留言-->
+    <form method="post" action="/dededln/plus/guestbook.php" name="form1">
+         <input type='hidden' name='action' value='save' />
+        <div class="linePulish" id="linePulish">
+            <header class="linePulishHead">
+                <h1>在线留言</h1>
+                <b id="pulishClose">X</b>
+            </header>
+            <div class="pulishBox" id="pulishComNameBox">
+                <input type="text" placeholder="姓名" name="uname" class="pulish" id="pulishComName"/>
+
+                <p id="pulishComNameAlt">中文2-10字</p>
+            </div>
+            <div class="pulishBox" id="pulishNameBox">
+                <input type="text" placeholder="联系方式" name="qq" class="pulish" id="pulishName"/>
+                <p id="pulishNameAlt">数字11位</p>
+            </div>
+             <div class="pulishBox" id="pulishEmailBox">
+                <input type="text" placeholder="邮箱" name="email" class="pulish" id="pulishEmail"/>
+
+                <p id="pulishEmailAlt">数字/字母/-_.</p>
+            </div>
+            <div class="pulishAreaBox" id="pulishAreaBox">
+                <textarea placeholder="请输入留言内容" name="msg" class="pulish" id="pulishArea"></textarea>
+            </div>
+            <input type="submit" name="linePulishLogin" value="提交" class="linePulishLogin">
+        </div>
+    </form>
+
+
+</div>
+
+<script>
+    var gId = function (id) {
+        return document.getElementById(id);
+    }
+    gId('sidebar_one').onclick = function () {
+        gId('orderFurn').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('orderClose').onclick = function () {
+        gId('orderFurn').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+    gId('sidebar_thr').onclick = function () {
+        gId('linePulish').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('pulishClose').onclick = function () {
+        gId('linePulish').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+ // 姓名
+
+    $('#orderComName').on('input propertychange', function () {
+        if (!(comName.test($('#orderComName').val()))) {
+            $('#orderComNameAlt').text('姓名错误');
+            $('#orderComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderComNameAlt').text('');
+            $('#orderComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //联系方式
+
+    $('#orderName').on('input propertychange', function () {
+        if (!(phone.test($('#orderName').val()))) {
+            $('#orderNameAlt').text('联系方式错误');
+            $('#orderNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderNameAlt').text('');
+            $('#orderNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //在线留言：  公司名称 -- 姓名
+
+    $('#pulishComName').on('input propertychange', function () {
+        if (!(comName.test($('#pulishComName').val()))) {
+            $('#pulishComNameAlt').text('姓名错误');
+            $('#pulishComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishComNameAlt').text('');
+            $('#pulishComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 用户名 -- 联系方式
+
+    $('#pulishName').on('input propertychange', function () {
+        if (!(phone.test($('#pulishName').val()))) {
+            $('#pulishNameAlt').text('联系方式错误');
+            $('#pulishNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishNameAlt').text('');
+            $('#pulishNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+
+    // 邮箱
+
+    $('#pulishEmail').on('input propertychange', function () {
+        if (!(email.test($('#pulishEmail').val()))) {
+            $('#pulishEmailAlt').text('邮箱格式错误');
+            $('#pulishEmailBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishEmailAlt').text('');
+            $('#pulishEmailBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+</script>
+<!-- //侧边栏 -->
+
+	<section class="n_main" id="main">
+		<!--left-->
+		<div class="n_left" id="n_left">
+			<div class="n_left_font">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>新闻动态</span>
+			</div>
+		</div>
+	</section>
+	<!--菜单-->
+	<div class="option" id="option">
+		
+		<a href="/dededln/a/xwdt/qydt/"><span>企业动态</span></a>
+		
+		<a href="/dededln/a/xwdt/cxxx/"><span>促销信息</span></a>
+		
+	</div>
+	<!--详情-->
+	<div id="atc_box">
+		<article class="atc">
+			<header>
+				<h1>迎五一,爱我妻”德洛尼橱柜大放“价”</h1>
+				<span><time>2016.05.01 17:05</time>
+					  <name>By:&nbsp;&nbsp;&nbsp;admin</name></span>
+			</header>
+			
+				<p>
+	德洛尼橱柜在五一黄金节来临之际，推出&ldquo;爱妻有理&rdquo;活动，购爱橱柜享受爱妻四重礼！</p>
+
+			
+		</article>
+	</div>
+	    
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+		      
+		      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+		      <li class='hover'><a href='/dededln/a/xwdt/ '>新闻动态</a></li>
+		      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+		      
+		      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+		      
+		      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+		      
+		      <li><a href="/dededln/a/std/">实体店</a></li>
+		      
+		      <li><a href="/dededln/member/index.php">会员中心</a></li>
+		      
+		      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+		      
+		    </ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 022-60902987</h2>
+				<!-- <p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p> -->
+				<p>Copyright © 德洛尼家居, Delonne home AlRights Reserved.33</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- 百度商桥客服 -->
+ <script>
+// var _hmt = _hmt || [];
+// (function() {
+//   var hm = document.createElement("script");
+//   hm.src = "https://hm.baidu.com/hm.js?15f7f8d2c4dae9b984d744d4567fa6f8";
+//   var s = document.getElementsByTagName("script")[0]; 
+//   s.parentNode.insertBefore(hm, s);
+// })();
+</script>
+
+</body>
+</html>

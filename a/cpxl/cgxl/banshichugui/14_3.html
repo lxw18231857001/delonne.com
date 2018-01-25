@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>板式橱柜2(3)_德洛尼官网</title>
+<meta name="keywords" content="" />
+<meta name="description" content="板式橱柜2" />
+<link href="/dededln/templets/default/style/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<link href="/dededln/templets/default/style/picture.css" rel="stylesheet" type="text/css" />
+<meta http-equiv="mobile-agent" content="format=xhtml;url=/dededln/m/view.php?aid=14">
+<script type="text/javascript">if(window.location.toString().indexOf('pref=padindex') != -1){}else{if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){if(window.location.href.indexOf("?mobile")<0){try{if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){window.location.href="/dededln/m/view.php?aid=14";}else if(/iPad/i.test(navigator.userAgent)){}else{}}catch(e){}}}}</script>
+<script language="javascript" type="text/javascript" src="/dededln/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/dededln/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+function checkSubmit(){
+	if(document.feedback.msg.value!='') document.feedback.submit();
+	else alert("评论内容不能为空！");
+}
+function postBadGood(ftype,fid)
+{
+	var taget_obj = document.getElementById(ftype+fid);
+	var saveid = GetCookie('badgoodid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==fid && hasid) continue;
+			else {
+				if(saveids[i]==fid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==10 && hasid) break;
+				if(j==9 && !hasid) break;
+			}
+		}
+		if(hasid) { alert('您刚才已表决过了喔！'); return false;}
+		else saveid += ','+fid;
+		SetCookie('badgoodid',saveid,1);
+	}
+	else
+	{
+		SetCookie('badgoodid',fid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/dededln/plus/feedback.php?aid="+fid+"&action="+ftype+"&fid="+fid);
+	DedeXHTTP = null;
+}
+function postDigg(ftype,aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	var saveid = GetCookie('diggid');
+	if(saveid != null)
+	{
+		var saveids = saveid.split(',');
+		var hasid = false;
+		saveid = '';
+		j = 1;
+		for(i=saveids.length-1;i>=0;i--)
+		{
+			if(saveids[i]==aid && hasid) continue;
+			else {
+				if(saveids[i]==aid && !hasid) hasid = true;
+				saveid += (saveid=='' ? saveids[i] : ','+saveids[i]);
+				j++;
+				if(j==20 && hasid) break;
+				if(j==19 && !hasid) break;
+			}
+		}
+		if(hasid) { alert("您已经顶过该帖，请不要重复顶帖 ！"); return; }
+		else saveid += ','+aid;
+		SetCookie('diggid',saveid,1);
+	}
+	else
+	{
+		SetCookie('diggid',aid,1);
+	}
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	var url = "/dededln/plus/digg_ajax.php?action="+ftype+"&id="+aid;
+	myajax.SendGet2(url);
+	DedeXHTTP = null;
+}
+function getDigg(aid)
+{
+	var taget_obj = document.getElementById('newdigg');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/dededln/plus/digg_ajax.php?id="+aid);
+	DedeXHTTP = null;
+}
+
+
+  var shortname = ".html";
+  var npage = 3;
+	var totalpage = 4;
+	var namehand = '14';
+	var displaytype = 'st';
+	var gtimer = null;
+	//大图
+	function dPlayBig()
+	{
+		var imgObj = document.getElementById("bigimg");
+		window.open(imgObj.src);
+	}
+	//停止幻灯
+	function dStopPlay()
+	{
+		if(gtimer) clearTimeout(gtimer);
+		else dPlayNext();
+	}
+	//开始幻灯
+	function dStartPlay()
+	{
+		if(npage!=totalpage) {
+			gtimer = setTimeout("dPlayNext()",10000);
+		}
+	}
+
+	//上一张
+	function dPlayPre(){
+
+	if(npage<2)
+	{
+			alert("这是第一页");
+	}
+	else
+	{
+			if(npage==2) {
+				if(namehand!='') location.href = namehand+shortname;
+				else location.href = "view.php?aid=14";
+			} else if(displaytype=='st' && namehand!='') {
+				location.href = namehand+"_"+(npage-1)+shortname;
+			} else {
+				location.href = "view.php?aid=14&pageno="+(npage-1);
+			}
+		}
+	}
+
+	//下一张
+	function dPlayNext()
+	{
+		if(npage==totalpage) { alert("没有了哦"); }
+		else
+		{
+			if(displaytype=='st' && namehand!='') location.href = namehand+"_"+(npage+1)+shortname;
+			else location.href = "view.php?aid=14&pageno="+(npage+1);
+		}
+	}
+-->
+</script>
+</head>
+<body class="picboxview">
+
+无法在这个位置找到： head2.htm
+<!-- /header -->
+<div class="w960 center clear mt1">
+	<div class="pleft">
+		<div class="place">
+			<strong>当前位置:</strong> <a href='http://localhost/dededln'>主页</a> > <a href='/dededln/a/cpxl/'>产品系列</a> > <a href='/dededln/a/cpxl/cgxl/'>橱柜系列</a> > <a href='/dededln/a/cpxl/cgxl/banshichugui/'>板式橱柜</a> > 
+		</div><!-- /place -->
+		<div class="viewbox">
+			<div class="title">
+				<h2>板式橱柜2(3)</h2>
+			</div><!-- /title -->
+			<div class="info">
+				<small>时间:</small>2017-07-21 18:08<small>来源:</small>未知 <small>作者:</small>admin <small>点击:</small><script src="/dededln/plus/count.php?view=yes&aid=14&mid=1" type='text/javascript' language="javascript"></script>次
+			</div><!-- /info -->
+			<div class="picbox">
+
+             
+					<center>
+						<a href='javascript:dPlayBig();' class='c1'>原始图片</a>
+
+						<a href='javascript:dPlayPre();' class='c1'>上一张</a>
+
+						<a href='javascript:dPlayNext();' class='c1'>下一张</a>
+
+						<a href='javascript:dStopPlay();' class='c1'>自动 / 暂停播放</a>
+
+					</center>
+                	
+             <!-- 如果使用的是多页单图模式(幻灯)，把href里的链接改为 javascript:dPlayNext(); 表示点击看下一页 -->
+             
+                
+                <a href='/dededln/uploads/allimg/170721/1-1FH11PU0.jpg' >
+                  <img src='/dededln/uploads/allimg/170721/1-1FH11PU0.jpg' id='bigimg'  width='500'  alt='3' border='0' />
+                </a>
+                <a href='/dededln/uploads/allimg/170721/1-1FH11PU0.jpg' >
+                	板式橱柜2
+                </a>
+                
+             
+
+             <script language='javascript'>dStartPlay();</script>
+
+			</div>
+           	<div class="intro"><div id="contentMidPicAD" style="float:right; clear:both; top:0; vertical-align:top; display:block"><!-- 250x250普通 开始 --><script type="text/javascript">var _mda_place_id ="58bcc92e8b472";</script><script type="text/javascript" src="http://place.ssp.desdev.cn/pageplace/show.js"></script><!-- 250x250普通 结束 --></div>该系列32/33的裸砖的特殊部位。它在世界的每一个系列的独特景致被刷新首页。下页仅在帧的装修定制。它在相同的运动指导和PC同样在智能手机的发展。
+            <div style="clear:both"></div>
+            </div>
+			<div class="newdigg" id="newdigg">
+				<div class="diggbox digg_good" onmousemove="this.style.backgroundPosition='left bottom';" onmouseout="this.style.backgroundPosition='left top';" onclick="javascript:postDigg('good',14)">
+					<div class="digg_act">顶一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+				<div class="diggbox digg_bad" onmousemove="this.style.backgroundPosition='right bottom';" onmouseout="this.style.backgroundPosition='right top';" onclick="javascript:postDigg('bad',14)">
+					<div class="digg_act">踩一下</div>
+					<div class="digg_num">(0)</div>
+					<div class="digg_percent">
+						<div class="digg_percent_bar"><span style="width:0%"></span></div>
+						<div class="digg_percent_num">0%</div>
+					</div>
+				</div>
+			</div>
+			 <script language="javascript" type="text/javascript">getDigg(14);</script>
+
+			<div class="boxoff">
+				<strong>------分隔线----------------------------</strong>
+			</div>
+			<div class="handle">
+				<div class="context">
+					<ul>
+						<li>上一篇：<a href='/dededln/a/cpxl/cgxl/banshichugui/13.html'>板式橱柜1</a> </li>
+						<li>下一篇：<a href='/dededln/a/cpxl/cgxl/banshichugui/15.html'>板式橱柜3</a> </li>
+					</ul>
+				</div><!-- /context -->
+				<div class="actbox">
+					<ul>
+						<li id="act-fav"><a href="/dededln/plus/stow.php?aid=14" target="_blank">收藏</a></li>
+						<li id="act-err"><a href="/dededln/plus/erraddsave.php?aid=14&title=板式橱柜2(3)" target="_blank">挑错</a></li>
+						<li id="act-pus"><a href="/dededln/plus/recommend.php?aid=14" target="_blank">推荐</a></li>
+						<li id="act-pnt"><a href="#" onClick="window.print();">打印</a></li>
+					</ul>
+				</div><!-- /actbox -->
+			</div><!-- /handle -->
+		</div><!-- /viewbox -->
+
+<!-- //AJAX评论区 -->
+无法在这个位置找到： ajaxfeedback.htm
+
+	</div><!-- /pleft -->
+
+	<div class="pright">
+	    <div class="infos_userinfo">
+ 			
+   	 	</div>
+
+    	<div class="mt1">
+			<dl class="tbox">
+				<dt><strong>热点图集</strong></dt>
+				<dd>
+					<ul class="e3">
+                    <li>
+							<a href="/dededln/a/cpxl/cgxl/banshichugui/14.html" class="preview"><img src="/dededln/uploads/allimg/170721/1-1FH11PS6-lp.jpg" alt="板式橱柜2"/></a>
+							<a href="/dededln/a/cpxl/cgxl/banshichugui/14.html" class="title">板式橱柜2</a>
+							<span class="intro">更新:2017-07-21</span>
+						</li>
+<li>
+							<a href="/dededln/a/cpxl/cgxl/banshichugui/15.html" class="preview"><img src="/dededln/uploads/allimg/170721/1-1FH11P944-lp.jpg" alt="板式橱柜3"/></a>
+							<a href="/dededln/a/cpxl/cgxl/banshichugui/15.html" class="title">板式橱柜3</a>
+							<span class="intro">更新:2017-07-21</span>
+						</li>
+<li>
+							<a href="/dededln/a/cpxl/cgxl/banshichugui/13.html" class="preview"><img src="/dededln/uploads/170721/1-1FH11PKQ34.jpg" alt="板式橱柜1"/></a>
+							<a href="/dededln/a/cpxl/cgxl/banshichugui/13.html" class="title">板式橱柜1</a>
+							<span class="intro">更新:2017-07-21</span>
+						</li>
+
+
+					</ul>
+				</dd>
+			</dl>
+		</div>
+        <div id="contentRtPicAD" style="margin:10px auto"><!-- 250x250启用SSP 开始 --><script type="text/javascript">var _mda_place_id ="58bcc82381892";</script><script type="text/javascript" src="http://place.ssp.desdev.cn/pageplace/show.js"></script><!-- 250x250启用SSP 结束 --></div>
+		<div class="mt1">
+			<dl class="tbox">
+				<dt><strong>推荐图集</strong></dt>
+				<dd>
+					<ul class="e9">
+                    
+					</ul>
+				</dd>
+			</dl>
+		</div>
+      <div id="contentRtPicAD2" style="margin:10px auto"><!-- 250x250普通 开始 --><script type="text/javascript">var _mda_place_id ="58bcc92e8b472";</script><script type="text/javascript" src="http://place.ssp.desdev.cn/pageplace/show.js"></script><!-- 250x250普通 结束 --></div>
+
+	</div><!-- /pright -->
+</div>
+<div id="innerfooterAD2" style="margin:10px auto; width:726px"><!-- 728x90普通 开始 --><script type="text/javascript">var _mda_place_id ="58bce8309bc21";</script><script type="text/javascript" src="http://place.ssp.desdev.cn/pageplace/show.js"></script><!-- 728x90普通 结束 --></div>
+<!-- 侧边栏 -->
+		<div class="sidebar">
+			<a href="javascript:;" class="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+			<a href="javascript:;" class="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+		</div>
+<!-- //侧边栏 -->
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+				<li><a href="link.htm">关于我们</a></li>
+				<li><a href="news.htm">新闻动态</a></li>
+				<li><a href="product.htm">产品系列</a></li>
+				<li><a href="case.htm">家装案例</a></li>
+				<li><a href="join.htm">招商加盟</a></li>
+				<li><a href="shop.htm">实体店</a></li>
+				<li><a href="call.htm">联系我们</a></li>
+			</ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 4006-0303-99</h2>
+				<p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+</body>
+</html>
+<!-- /footer -->
+
+</body>
+</html>

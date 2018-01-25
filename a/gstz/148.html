@@ -1,0 +1,364 @@
+<!-- 新闻详情 -->
+<!DOCTYPE html>
+<html lang="zh">
+<head id="head1">
+  <meta charset="UTF-8" />
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" /> -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0" />
+  <title>德洛尼官网</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link rel="icon" href="/dededln/templets/default/images/32X32.ico"/>   
+  <link rel="stylesheet" href="/dededln/templets/default/style/dedecms.css"/>
+  <link rel="stylesheet" href="/dededln/templets/default/style/common.css"/>
+  <link rel="stylesheet" media="screen and (min-width:1024px)" href="/dededln/templets/default/style/pc.css"/>
+  <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="/dededln/templets/default/style/ipad.css"/>
+  <link rel="stylesheet" media="screen and (max-width:767px)" href="/dededln/templets/default/style/phone.css"/>
+
+  <script src="/dededln/templets/default/js/jquery.min.js" ></script> 
+  <script src="/dededln/templets/default/js/jquery.easing.js" ></script>  
+  <script src="/dededln/templets/default/js/zepto.min.js" ></script>  
+  <script src="/dededln/templets/default/js/touch.js" ></script>
+  <script src="/dededln/templets/default/js/common.js" ></script>
+  <script src="/dededln/templets/default/js/indexpc.js" ></script>
+  <script src="/dededln/templets/default/js/area.js"></script>  
+
+
+
+  <script type="text/javascript">
+    //header
+    addEventListener('DOMContentLoaded',function(){
+      var oO=document.getElementById('open');
+      var oH=document.getElementById('head');
+      var oM=document.getElementById('menu');
+      var oS=document.getElementById('seach');
+      var aLi=oM.getElementsByTagName('li');
+      var oFlag=true;
+      oO.style.background='url(/dededln/templets/default/images/menu.svg)  no-repeat';
+      oO.onclick=function(){
+        if(oFlag){
+          oO.style.background='url(/dededln/templets/default/images/close.svg) no-repeat';
+          move(oM,{height:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+          move(oH,{marginBottom:aLi[0].offsetHeight*aLi.length},{time:300,type:'linear'});
+        }else{
+          oO.style.background='url(/dededln/templets/default/images/menu.svg) no-repeat';
+          move(oM,{height:0},{time:300,style:'linear'});
+          move(oH,{marginBottom:0},{time:300,type:'linear'});
+        }
+        oFlag=!oFlag;
+      };
+    },false);
+  </script>
+</head>
+<body class="indexBody">
+  <!--头部-->
+  <div class="head" id="head">
+    <a href="/dededln/" class="head_img" >
+      <img src="/dededln/templets/default/images/logo.png"  alt="德洛尼官网"/></a>
+    <ul class="menu" id="menu">
+      
+      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+      
+      <li><a href="/dededln/a/xwdt/">新闻动态</a></li>
+      
+      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+      
+      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+      
+      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+      
+      <li><a href="/dededln/a/std/">实体店</a></li>
+      
+      <li><a href="/dededln/member/index.php">会员中心</a></li>
+      
+      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+      
+       <li class="search" id="seach">
+        <div class="ipt">
+          <form method="get" class="form">
+            <input type="text" name="search" class="sear" placeholder="请输入商品名称"/>
+            <div style="background-image:url(/dededln/templets/default/images/search.svg);"></div>
+          </form>
+        </div>
+      </li>
+    </ul>
+    <div class="open" id="open"></div>
+  </div>
+  <!--头部...-->
+
+  <!-- 右侧边栏 -->
+
+<div class="sidebar">
+    <a href="javascript:;" class="sidebar_one" id="sidebar_one"><img src="/dededln/templets/default/images/lc.png"/></a>
+    <a href="javascript:;" class="sidebar_two" id="sidebar_two"><img src="/dededln/templets/default/images/dw.png"/></a>
+    <a href="javascript:;" class="sidebar_thr" id="sidebar_thr"><img src="/dededln/templets/default/images/talk.png"/></a>
+</div>
+<div id="orderPulishBox">
+    <form action="/dededln/plus/diy.php" enctype="multipart/form-data" method="post">
+      <input type="hidden" name="action" value="post" />
+      <input type="hidden" name="diyid" value="1" />
+      <input type="hidden" name="do" value="2" />
+        <div class="orderFurn" id="orderFurn">
+            <header class="orderFurnHead">
+                <h1>预约量尺</h1>
+                <b id="orderClose">X</b>
+            </header>
+           <!-- -->
+           <!-- <a href='' target="_blank">null</a> -->
+          
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="姓名" name="username" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">中文2-10字</p>
+            </div>
+            <div class="orderBox" id="orderNameBox">
+                <input type="text" placeholder="联系方式" name="tel" class="order" id="orderName"/>
+
+                <p id="orderNameAlt">数字11位</p>
+            </div>
+            <div class="orderAddress">
+                <select id="province" name="province"></select>  
+                <select id="city" name="city"></select>  
+            <script>init_area();</script>
+            </div>
+            <div class="orderBox" id="orderComNameBox">
+                <input type="text" placeholder="详细联系地址" name="address" class="order" id="orderComName"/>
+
+                <p id="orderComNameAlt">详细联系地址</p>
+            </div>
+
+            <div class="orderChecks">
+                <div><input name="style" type="checkbox" value="1"/><h4>橱柜</h4></div>
+                <div><input name="style" type="checkbox" value="2"/><h4>衣柜</h4></div>
+                <div><input name="style" type="checkbox" value="3"/><h4>木门</h4></div>
+                <div><input name="style" type="checkbox" value="4"/><h4>卫浴</h4></div>
+                <div><input name="style" type="checkbox" value="5"/><h4>壁纸</h4></div>
+                <div><input type="text" placeholder="其他需求"  name="otherNeeds" class="otherFit"/></div>
+            </div>
+            <input type="submit" name="orderIn" value="提交" class="orderLogin">
+        </div>
+        <!-- -->
+    </form>
+
+
+    <form method="post" action="/dededln/plus/guestbook.php" name="form1">
+         <input type='hidden' name='action' value='save' />
+        <div class="linePulish" id="linePulish">
+            <header class="linePulishHead">
+                <h1>在线留言</h1>
+                <b id="pulishClose">X</b>
+            </header>
+            <div class="pulishBox" id="pulishComNameBox">
+                <input type="text" placeholder="姓名" name="uname" class="pulish" id="pulishComName"/>
+
+                <p id="pulishComNameAlt">中文2-10字</p>
+            </div>
+            <div class="pulishBox" id="pulishNameBox">
+                <input type="text" placeholder="联系方式" name="qq" class="pulish" id="pulishName"/>
+                <p id="pulishNameAlt">数字11位</p>
+            </div>
+             <div class="pulishBox" id="pulishEmailBox">
+                <input type="text" placeholder="邮箱" name="email" class="pulish" id="pulishEmail"/>
+
+                <p id="pulishEmailAlt">数字/字母/-_.</p>
+            </div>
+            <div class="pulishAreaBox" id="pulishAreaBox">
+                <textarea placeholder="请输入留言内容" name="msg" class="pulish" id="pulishArea"></textarea>
+            </div>
+            <input type="submit" name="linePulishLogin" value="提交" class="linePulishLogin">
+        </div>
+    </form>
+
+
+</div>
+
+<script>
+    var gId = function (id) {
+        return document.getElementById(id);
+    }
+    gId('sidebar_one').onclick = function () {
+        gId('orderFurn').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('orderClose').onclick = function () {
+        gId('orderFurn').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+    gId('sidebar_thr').onclick = function () {
+        gId('linePulish').style.display = 'block';
+        gId('orderPulishBox').style.display = 'block';
+    }
+    gId('pulishClose').onclick = function () {
+        gId('linePulish').style.display = 'none';
+        gId('orderPulishBox').style.display = 'none';
+    }
+ // 姓名
+    $('#orderComName').focus(function () {
+        $('#orderComNameBox').css({'borderColor': '#F39800'});
+    })
+    $('#orderComName').blur(function () {
+        if (!(comName.test($('#orderComName').val()))) {
+            $('#orderComNameAlt').text('姓名错误');
+            $('#orderComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderComNameAlt').text('');
+            $('#orderComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //联系方式
+    $('#orderName').focus(function () {
+        $('#orderNameBox').css({'borderColor': '#F39800'});
+    })
+    $('#orderName').blur(function () {
+        if (!(phone.test($('#orderName').val()))) {
+            $('#orderNameAlt').text('联系方式错误');
+            $('#orderNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#orderNameAlt').text('');
+            $('#orderNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    //在线留言：  公司名称 -- 姓名
+    $('#pulishComName').focus(function () {
+        $('#pulishComNameBox').css({'borderColor': '#F39800'});
+    })
+    $('#pulishComName').blur(function () {
+        if (!(comName.test($('#pulishComName').val()))) {
+            $('#pulishComNameAlt').text('姓名错误');
+            $('#pulishComNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishComNameAlt').text('');
+            $('#pulishComNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 用户名 -- 联系方式
+    $('#pulishName').focus(function () {
+        $('#pulishNameBox').css({'borderColor': '#F39800'});
+    })
+    $('#pulishName').blur(function () {
+        if (!(phone.test($('#pulishName').val()))) {
+            $('#pulishNameAlt').text('联系方式错误');
+            $('#pulishNameBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishNameAlt').text('');
+            $('#pulishNameBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+
+    // 邮箱
+
+    $('#pulishEmail').on('input propertychange', function () {
+        if (!(email.test($('#pulishEmail').val()))) {
+            $('#pulishEmailAlt').text('邮箱格式错误');
+            $('#pulishEmailBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#pulishEmailAlt').text('');
+            $('#pulishEmailBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+</script>
+<!-- //侧边栏 -->
+
+	<section class="n_main" id="main">
+		<!--left-->
+		<div class="n_left" id="n_left">
+			<div class="n_left_font">
+				<h1>CUSTOM</h1>
+				<p>DREAM HOME</p>
+				<span>新闻动态</span>
+			</div>
+		</div>
+	</section>
+	<!--菜单-->
+	<div class="option" id="option">
+		
+	</div>
+	<!--详情-->
+	<div id="atc_box">
+		<article class="atc">
+			<header>
+				<h1>【德洛尼橱柜分享】一个老板给了一个小孩90元，却得到了500万的回报。</h1>
+				<span><time>2017.08.17 11:11</time>
+					  <name>By:&nbsp;&nbsp;&nbsp;admin</name></span>
+			</header>
+			
+				<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	一个老板的自述故事： 那是在15年前，我到这个城市出差，谈完生意，我去商</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	场给同事买些礼物。平时，我逛商场时喜欢随身带一些硬币，因为商场附近有</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	时会有乞讨的人，给上一两枚硬币我心里会踏实些。这天也是这样，口袋里依</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	旧有些硬币，于是我就将十几枚硬币散给一帮乞讨的小乞丐。</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; line-height: normal;">就在这时，我看见一个男孩高举着一块牌子看着我，无疑，他想引起我的注意。我朝他走过去，看到他约摸十三四岁，衣着破旧却很干净，头发也梳得整齐。他不像别人手里拿个搪瓷缸，他的牌子一面画着一个男孩在擦鞋，一面写着：&ldquo;我想要一只擦鞋箱。&rdquo; 那时我正在做投资生意，反正还有时间，我便问男孩需要多少钱，男孩说：&ldquo;125元。&rdquo; 我摇摇头，说他要的擦鞋箱太昂贵了。男孩说不贵，还说他已经去过批发市场4次，都看过了，要买专用箱子、凳子、清洁油、软毛刷和十几种鞋油，没有125元就达不到他的要求。男孩操着方言，说得有板有眼。我问他现在手里有多少钱，男孩想都没想，说已经有35元，还少90元。我认真看着男孩，确定他不是个小骗子，便掏出钱夹，拿出90元，说：&ldquo;这90元钱给你，算是我的投资。有个条件，从你接过钱的这一刻起，我们就是合伙人了。我在这个城市呆5天，5天内你不仅要把90元钱还给我，我还要1元钱的利息。如果你答应这条件，这90元现在就归你。&rdquo; 男孩兴奋地看着我，满口答应。男孩还告诉我，他读六年级，每星期只去上3天课，另外几天要放牛、放羊和帮母亲种地，可他的成绩从没有滑下过前三名，所以，他是最棒的。我问他为什么要买擦鞋箱，他说：&ldquo;因为家里穷，我要趁着暑假出来，攒够学费。&rdquo; 我以一种欣赏的眼光看着男孩，然后陪他去批发市场选购了擦鞋箱和其他各种擦鞋用具。</span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; line-height: normal;">男孩背着箱子，准备在商场门口摆下摊位。我摇摇头，说：&ldquo;作为你的合伙人，为了收回自己的成本，有义务提醒你选择合适的经营地点。&rdquo;商场内部有免费擦鞋器，很多人都知道。男孩认真想了想，问：&rdquo;选在对面的酒店怎么样？&rdquo;我想：&ldquo;这里是旅游城市，每天都有一车一车的人住进那家酒店，他们旅途劳顿，第二天出行时，肯定需要把鞋擦得干干净净。&rdquo;想到这些，我就答应了他。 于是，男孩在酒店门口附近落脚了，他把擦鞋箱放到了离门口稍远的地方，他看看左右无人，对我说：&ldquo;为什么不让我现在就付清1元钱利息？你也应该知道我的服务水平。&rdquo;我&ldquo;扑哧&rdquo;一声笑了，这小家伙真是鬼得很，他是要给我擦鞋，用擦鞋的收费抵那1元的利息。我欣赏他的精明，便坐到他的板凳上，说：&ldquo;你要是擦得不好，就证明你在说谎，而我投资给一个不诚实的人，就证明我的投资失败。&rdquo;男孩的头晃得像拨浪鼓，说他是最棒的，他在家里练习擦皮鞋练了一个月。</span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; line-height: normal;">要知道，农村并没有多少人有几双好皮鞋，他是一家一家地让他们把皮鞋拿出</span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; line-height: normal;">来，细心地擦净擦亮的。 几分钟后，看着皮鞋光可鉴人，我满意地点头。我从口袋里拿出红笔，在他的左右脸颊上写下两个大字：&ldquo;最棒。&rdquo;男孩乐了。正在这时，有一辆中巴车载着一车游客过来了，他连忙背着擦鞋箱跑过去，指着自己的脸对那些陆续下车的旅客说：&ldquo;这是顾客对我的奖赏，你想试试吗？我会把你的皮鞋变成镜子的。&rdquo;就这样，男孩忙碌起来了&hellip;&hellip; 第二天，我来到酒店，看到男孩早早来守摊了，他兴奋地告诉我，他昨天赚到了50块钱，除去给我18元，吃饭花3元，他净剩29元。我拍拍他的头，夸他干得不错。他说昨晚没睡地道桥，而是睡了大通铺，但没交5块钱的铺位钱。我疑惑了，怎么会不付床铺钱？这时，男孩得意地笑了：&ldquo;我帮老板和老板娘擦了十来双鞋子，今晚我还能不用掏钱住店。&rdquo; 5天过得很快，我要离开这个城市了，这5天里，男孩每天还18元，还够了90元。男孩知道我在北京一家投资公司做经理，说是等他大学毕业，会去北京找我，说着他伸出小黑手，我也伸出了手，两只手紧紧握到一起&hellip;&hellip; 弹指一挥间，竟是15年。我离开了当初的投资公司，自己开了一家贸易公司。这天，我正在办公室忙得焦头烂额，公司因为意外损失了一大批货物，周转资金面临困难，四方都在催债。刚放下电话，秘书进来了，说有个年轻人约我中午吃饭，我头也不抬地问是谁，秘书拿出一枚钥匙链，放到我桌上，看着这钥匙链，我愣住了，那上面有一个玻璃小熊，小熊的脑门上刻着三个字：&ldquo;我最棒。&rdquo; 我想起来了，这钥匙链，是15年前我和那个擦鞋少年临别握手时塞进他掌心的礼物。 到了中午，我走进酒店，预订好的座位上站起一个西装革履、英气逼人的年轻人。他含蓄地微笑，朝我微微弯一下腰。从他脸上，我略微找到了当年擦鞋少年的影子。喝茶时，他拿出一张500万元的支票，说：&ldquo;我想投资到你们公司，5年之内利润抵回。&rdquo; 500万元，真是雪中送炭！</span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; line-height: normal;">年轻人笑吟吟地说：&ldquo;15年前，你教会了我以按揭的方式生存。从那个擦鞋箱起，我完成了一次又一次的积累。现在，我有了自己的公司，这500万元投进去，我有权利要求一笔额外利息。&rdquo; 我抬起头，问他要多少，他不动声色地回答：&ldquo;1元钱。&rdquo;我靠到椅背上，脸上露出微笑。90元，回报500万元，这无疑是我投资生涯中最成功的案例。 成功不仅是您拥有多少，更重要的是您帮助他人多少！有多少人因您而感动因您而成长。</span></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	&nbsp;</p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: normal; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(171, 25, 66);">当您读完本篇文章时，你有两种选择：</span></strong></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(171, 25, 66);">1．你可转载或分享此文，传播一些积极的信息，让世间多一点爱! 2．你也可</span></strong></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(171, 25, 66);">以根本不去理会它，就像你从未看见一样。</span></strong></p>
+<p style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: normal; clear: both; min-height: 1.5em; color: rgb(62, 62, 62); font-size: 16px; font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; orphans: auto; text-align: start; text-indent: 0px; text-transform: none; white-space: normal; widows: 1; word-spacing: 0px; -webkit-text-stroke-width: 0px; line-height: 2em; font-family: 宋体; word-break: normal; background-color: rgb(255, 255, 255);">
+	<strong style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important;"><span style="margin: 0px; padding: 0px; max-width: 100%; box-sizing: border-box !important; word-wrap: break-word !important; color: rgb(171, 25, 66);">这就叫爱出者爱返，福往者福来，传播正能量，拥有正思维，正能量！</span></strong></p>
+
+			
+		</article>
+	</div>
+	    
+<!-- footer -->
+<div class="footer">
+		<div class="footer_wrap">
+			<ul>
+		      
+		      <li><a href="/dededln/a/gywm/">关于我们</a></li>
+		      
+		      <li><a href="/dededln/a/xwdt/">新闻动态</a></li>
+		      
+		      <li><a href="/dededln/a/cpxl/cgxl/banshichugui/">产品系列</a></li>
+		      
+		      <li><a href="/dededln/a/jzxl/">家装案例</a></li>
+		      
+		      <li><a href="/dededln/a/zsjm/">招商加盟</a></li>
+		      
+		      <li><a href="/dededln/a/std/">实体店</a></li>
+		      
+		      <li><a href="/dededln/member/index.php">会员中心</a></li>
+		      
+		      <li><a href="/dededln/a/lxwm/">联系我们</a></li>
+		      
+		    </ul>
+			<div class="footer_bottom">
+				<h2>招商加盟热线 4006-0303-99</h2>
+				<p>Copyright &copy; 德洛尼家居, Delonne home AlRights Reserved.</p>
+				<img src="/dededln/templets/default/images/weixin.png"/>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+<!-- //footer -->
+<!-- 百度商桥客服 -->
+ <script>
+// var _hmt = _hmt || [];
+// (function() {
+//   var hm = document.createElement("script");
+//   hm.src = "https://hm.baidu.com/hm.js?15f7f8d2c4dae9b984d744d4567fa6f8";
+//   var s = document.getElementsByTagName("script")[0]; 
+//   s.parentNode.insertBefore(hm, s);
+// })();
+</script>
+
+</body>
+</html>

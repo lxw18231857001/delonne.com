@@ -1,0 +1,65 @@
+<!-- 公司通知 -->
+{dede:include filename="head.htm"/}
+<header class="ct_main" id="main" style="background-image:url({dede:field name='typeimg'/})">
+    <!--left-->
+    <!-- <div class="ct_left" id="ct_left">
+        <div class="ct_left_font">
+            <h1>CUSTOM</h1>
+            <p>DREAM HOME</p>
+            <span>会员中心</span>
+        </div>
+    </div> -->
+    <!--left...-->
+</header>
+<!--菜单-->
+<div class="option" id="option">
+    {dede:channel type='son' currentstyle="<a href='~typeurl~'><span class='active'>~typename~</span></a> "} 
+        <a href="[field:typeurl/]"><span>[field:typename/]</span></a>
+        {/dede:channel}
+</div>
+<!--内容-->
+<contain class="centerBox">
+    <artical class="centerArtical">
+        <header>公告</header>
+       {dede:list  titlen='80' orderby='pubdate' pagesize='6'}
+            <a href="[field:arcurl/]" class="link">
+                <div class="centerArticalList">
+                    <span>[field:title function="cn_substr(@me,60)/]...</span>
+                    <time>[field:pubdate function='strftime("%Y/%m/%d",@me)'/]</time>
+                </div>
+            </a>
+        {/dede:list}
+    </artical>
+    <aside class="centerAside">
+        <header>简介</header>
+       <!--  <video poster="imgs/vplay.png" class="video">
+         
+            <source src="{dede:global.cfg_templets_skin/}/video/4.mp4" type="video/mp4">
+            您的浏览器不支持 video 标签。
+        </video> -->
+          <embed src="https://imgcache.qq.com/tencentvideo_v1/playerv3/TPout.swf?max_age=86400&v=20161117&vid=y0174gd34tk&auto=0" allowFullScreen="true" quality="high" width="480" height="300" align="middle" allowScriptAccess="always" type="application/x-shockwave-flash"></embed>
+    </aside>
+</contain>
+<!--翻页-->
+<aside class="page" id="casePage">
+        <ul>
+                {dede:pagelist listsize='4'  listitem ="indexpre pageno next end"/}
+        </ul>
+</aside>
+<!--翻页...-->
+ 
+
+<script>
+    var gCl = function (className) {
+        return document.getElementsByClassName(className);
+    }
+    for (var i = 0; i < gCl('video').length; i++) {
+        gCl('video')[i].onclick = function () {
+            this.play();
+            this.controls = true;
+        }
+    }
+</script>
+<!-- footer -->
+{dede:include filename="footer.htm"/}
+

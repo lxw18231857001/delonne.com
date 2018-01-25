@@ -1,0 +1,101 @@
+{dede:include filename='head.htm'/}
+<!--主区域-->
+<section class="loginmain" id="loginmain">
+    <!--left-->
+    <div class="l_left" id="l_left">
+        <div class="l_left_font">
+            <h1>CUSTOM</h1>
+
+            <p>DREAM HOME</p>
+
+            <h3>定制梦想家</h3>
+        </div>
+    </div>
+    <!--left...-->
+    <!--right-->
+    <form action="abc.com">
+        <div class="login">
+            <header class="Ohead">
+                <h1>修改密码</h1>
+            </header>
+            <h2><a href="javascript:;">返回登录</a></h2>
+
+            <div class="iptBox" id="iptOldPswBox">
+                <input type="password" placeholder="原密码" name="iptOldPsw" class="ipt" id="iptOldPsw"/>
+
+                <p id="iptOldPswAlt">字母/数字6-8位</p>
+            </div>
+            <div class="iptBox" id="iptPswBox">
+                <input type="password" placeholder="新密码" name="iptNewPsw" class="ipt" id="iptPsw"/>
+
+                <p id="iptPswAlt">字母/数字6-8位</p>
+            </div>
+            <div class="iptBox" id="iptCofPswBox">
+                <input type="password" placeholder="确认新密码" name="iptConNewPsw" class="ipt" id="iptCofPsw"/>
+
+                <p id="iptCofPswAlt">字母/数字6-8位</p>
+            </div>
+            <input type="button" name="iptpulish" value="提交" class="iptLogin" id="cofPsw">
+        </div>
+    </form>
+    <!--right...-->
+</section>
+
+ <script src="{dede:global.cfg_templets_skin/}/js/jquery.min.js"></script>
+<script src="{dede:global.cfg_templets_skin/}/js/common.js" ></script>
+ {dede:include filename="footer.htm"/}
+ <script>
+    // 原密码
+    $('#iptOldPsw').on('input propertychange', function () {
+        if (!(psw.test($('#iptOldPsw').val()))) {
+            $('#iptOldPswAlt').text('密码错误');
+            $('#iptOldPswBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#iptOldPswAlt').text('');
+            $('#iptOldPswBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 密码
+    // 密码
+    $('#iptPsw').on('input propertychange', function () {
+        if (!(psw.test($('#iptPsw').val()))) {
+            $('#iptPswAlt').text('密码错误');
+            $('#iptPswBox').css({'borderColor': '#F39800'});
+        } else {
+            $('#iptPswAlt').text('');
+            $('#iptPswBox').css({'borderColor': '#EDEDED'});
+        }
+    })
+    // 确认密码
+    // 确认密码
+    $('#iptCofPsw').on('input propertychange', function () {
+        if (!(psw.test($('#iptCofPsw').val()))) {
+            $('#iptCofPswAlt').text('密码错误');
+            $('#iptCofPswBox').css({'borderColor': '#F39800'});
+        } else {
+            if ($('#iptCofPsw').val() === $('#iptPsw').val()) {
+                $('#iptCofPswAlt').text('');
+                $('#iptCofPswBox').css({'borderColor': '#EDEDED'});
+            } else {
+                $('#iptCofPswAlt').text('两次密码输入不一致');
+                $('#iptCofPswBox').css({'borderColor': '#F39800'});
+            }
+        }
+    })
+
+    $('#cofPsw').on('click', function () {
+        var reg = psw.test($('#iptOldPsw').val()) || psw.test($('#iptPsw').val()) || psw.test($('#iptCofPsw').val());
+        if (reg) {
+            $.ajax({
+                type: "get",
+                url: 'abc.html',
+                data: {'iptPsw': 'iptPsw.val()'},
+                success: function () {
+                    alert('修改成功!')
+                }
+            });
+        } else {
+            return false;
+        }
+    })
+</script>

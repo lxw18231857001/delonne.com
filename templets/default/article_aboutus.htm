@@ -1,0 +1,166 @@
+<!-- 关于我们 -->
+{dede:include filename="head.htm"/}
+<script src="{dede:global.cfg_templets_skin/}/js/jquery-1.9.1.min.js" ></script>
+<script src="{dede:global.cfg_templets_skin/}/js/jquery.bxslider.js" ></script>
+<link rel="stylesheet" href="{dede:global.cfg_templets_skin/}/style/jquery.bxslider.css"/>
+  <script>
+    addEventListener('DOMContentLoaded',function(){
+      double('option','whell_img','whell_det');
+      /*Imgmove();*/
+    },false);
+  </script>
+  <!--主区域-->
+  <!-- 背景 -->
+
+  <section class="whell">
+     <!-- 背景 --> 
+      <div class="whell_img" id="whell_img">
+      <ul>
+          {dede:channel typeid='1'}
+          <li style="background-image:url([field:typeimg/]);"></li>
+          {/dede:channel}
+        </ul>
+      </div>
+    <!-- 菜单 -->
+      <div class="option" id="option">
+          {dede:channel type='son' currentstyle="<span class="active">~typename~</span> "} <span>[field:typename /]</span> {/dede:channel}
+      </div>
+    <!-- 详情 -->
+    <div class="whell_det" id="whell_det">
+      <ul>
+        <li class="show1">
+            {dede:sql sql='Select content from dede_arctype where id=8'}[field:content/]{/dede:sql}
+        </li>
+        <li>
+            {dede:sql sql='Select content from dede_arctype where id=9'}[field:content/]{/dede:sql}
+        </li>
+        <li id="whell_det_list">
+            <style>
+                @media screen and (min-width:768px){
+                    .slide img{
+                        width: 98%;
+                        margin: auto;
+                        height: 288px;
+                    }
+                }
+                .bx-viewport{
+                    height: auto !important;
+                }
+
+                .slide{
+                    height: 100%;
+                }
+                .slider1{
+                    height: 100%;
+                }
+                .bx-pager.bx-default-pager,.bx-controls-auto{
+                    display: none;
+                }
+                .bx-wrapper .bx-viewport {
+                    -moz-box-shadow: none;
+                    -webkit-box-shadow:none;
+                    box-shadow: none;
+                    border: none;
+                }
+                .bx-viewport{
+                    width: 80% !important;
+                    margin: 0 auto !important;
+                }
+                @media screen and (max-width:768px) {
+                    .slide img{
+                        width: 98%;
+                        margin: auto;
+                        height: 160px;
+                    }
+                    #whell_det #whell_det_list{
+                        height: 180px;
+                    }
+                    .bx-wrapper{
+                        margin: 10px auto;
+                    }
+                    .bx-wrapper .bx-viewport{
+                        padding-left: 1px;
+                    }
+                    .head_img img{
+                        width: 70%;
+                    }
+                }
+                @media screen and (min-width:768px) and (max-width: 1024px){
+                    #whell_det #whell_det_list{
+                        height: 250px;
+                        padding-top: 20px;
+                    }
+                    .slide img{
+                        height: 230px;
+                    }
+                    .head_img img{
+                        width: 60%;
+                        height: 70%;
+                        margin-top: 10px;
+                    }
+                    .head_img{
+                        margin-top: -20px;
+                    }
+                }
+            </style>
+            <div class="slider1">
+                {dede:field.id  function="Getimg(6,344,400,8)" /}
+            </div>
+            <script type="text/javascript">
+
+                $(document).ready(function(){
+                    var winWide = window.screen.width;
+                    if(winWide>1024){
+                        $('.slider1').bxSlider({
+                            slideWidth: 300,
+                            auto: true,
+                            minSlides: 1,
+                            maxSlides: 4,
+                            moveSlides: 1,
+                            slideMargin: 1
+                        });
+                        var ere = $("#whell_det_list").width();
+                        var fef = 1203*0.8;
+                        $(".slide").width(fef/4);
+                    }else if(winWide<768){
+                        $('.slider1').bxSlider({
+                            slideWidth: 300,
+                            auto: true,
+                            minSlides: 1,
+                            maxSlides: 2,
+                            moveSlides: 1,
+                            slideMargin: 1
+                        });
+                        var ere = $("#whell_det_list").width();
+                        var fef = ere*0.8;
+                        $(".slide").width(fef/2);
+                    }
+                    if(winWide>=768 && winWide<=1024){
+                        $('.slider1').bxSlider({
+                            slideWidth: 300,
+                            auto: true,
+                            minSlides: 1,
+                            maxSlides: 4,
+                            moveSlides: 1,
+                            slideMargin: 1
+                        });
+                        var ere = $("#whell_det_list").width();
+                        var fef = ere*0.8;
+                        $(".slide").width(fef/4);
+                    }
+                });
+
+            </script>
+        </li>
+        <li>
+            {dede:sql sql='Select content from dede_arctype where id=11'}  [field:content/]{/dede:sql}
+        </li>
+      </ul>
+    </div>
+    <!-- end详情 -->
+  </section>
+  <!--end主区域...-->
+{dede:include filename="footer.htm"/}
+
+
+    
